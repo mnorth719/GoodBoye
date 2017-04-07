@@ -23,6 +23,16 @@ class DogViewController: UIViewController {
         self.activityIndicator.isHidden = true
     }
     
+    deinit {
+        barkTimer?.invalidate()
+        barkTimer = nil
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        barkTimer?.invalidate()
+        barkTimer = nil
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         barkTimer?.invalidate()
