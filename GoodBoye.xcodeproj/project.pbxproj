@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		770D29F31E96D6D0003BD3B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D29F21E96D6D0003BD3B2 /* AppDelegate.swift */; };
-		770D29F51E96D6D0003BD3B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D29F41E96D6D0003BD3B2 /* ViewController.swift */; };
 		770D29F81E96D6D0003BD3B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 770D29F61E96D6D0003BD3B2 /* Main.storyboard */; };
 		770D29FA1E96D6D0003BD3B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 770D29F91E96D6D0003BD3B2 /* Assets.xcassets */; };
 		770D29FD1E96D6D0003BD3B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 770D29FB1E96D6D0003BD3B2 /* LaunchScreen.storyboard */; };
+		770D2A081E96DB28003BD3B2 /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A071E96DB28003BD3B2 /* DogViewController.swift */; };
+		770D2A0A1E96DB42003BD3B2 /* FavoriteDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A091E96DB42003BD3B2 /* FavoriteDogsViewController.swift */; };
+		770D2A0E1E96DE35003BD3B2 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A0D1E96DE35003BD3B2 /* Dog.swift */; };
+		770D2A101E96DFB4003BD3B2 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A0F1E96DFB4003BD3B2 /* ImageService.swift */; };
+		770D2A131E96FE4B003BD3B2 /* DogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A121E96FE4B003BD3B2 /* DogService.swift */; };
+		DF0A6AC721943F737189D7BD /* Pods_GoodBoye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0285C881EAA83B499F5C4D8 /* Pods_GoodBoye.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		770D29EF1E96D6D0003BD3B2 /* GoodBoye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodBoye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		770D29F21E96D6D0003BD3B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		770D29F41E96D6D0003BD3B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		770D29F71E96D6D0003BD3B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		770D29F91E96D6D0003BD3B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		770D29FC1E96D6D0003BD3B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		770D29FE1E96D6D0003BD3B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		770D2A071E96DB28003BD3B2 /* DogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
+		770D2A091E96DB42003BD3B2 /* FavoriteDogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteDogsViewController.swift; sourceTree = "<group>"; };
+		770D2A0D1E96DE35003BD3B2 /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		770D2A0F1E96DFB4003BD3B2 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		770D2A121E96FE4B003BD3B2 /* DogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogService.swift; sourceTree = "<group>"; };
+		98BD5A66507B4044BA3AF14E /* Pods-GoodBoye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodBoye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodBoye/Pods-GoodBoye.debug.xcconfig"; sourceTree = "<group>"; };
+		9E9CF1E2810139DA58F3E53F /* Pods-GoodBoye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodBoye.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodBoye/Pods-GoodBoye.release.xcconfig"; sourceTree = "<group>"; };
+		B0285C881EAA83B499F5C4D8 /* Pods_GoodBoye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodBoye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0A6AC721943F737189D7BD /* Pods_GoodBoye.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14BA3A36F8301E5A0B8FDAE8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98BD5A66507B4044BA3AF14E /* Pods-GoodBoye.debug.xcconfig */,
+				9E9CF1E2810139DA58F3E53F /* Pods-GoodBoye.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		770D29E61E96D6D0003BD3B2 = {
 			isa = PBXGroup;
 			children = (
 				770D29F11E96D6D0003BD3B2 /* GoodBoye */,
 				770D29F01E96D6D0003BD3B2 /* Products */,
+				14BA3A36F8301E5A0B8FDAE8 /* Pods */,
+				7B1ECB950C7334B6B6184480 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +78,66 @@
 		770D29F11E96D6D0003BD3B2 /* GoodBoye */ = {
 			isa = PBXGroup;
 			children = (
+				770D2A061E96D806003BD3B2 /* Controllers */,
+				770D2A051E96D801003BD3B2 /* Views */,
+				770D2A041E96D7FC003BD3B2 /* Model */,
 				770D29F21E96D6D0003BD3B2 /* AppDelegate.swift */,
-				770D29F41E96D6D0003BD3B2 /* ViewController.swift */,
 				770D29F61E96D6D0003BD3B2 /* Main.storyboard */,
 				770D29F91E96D6D0003BD3B2 /* Assets.xcassets */,
 				770D29FB1E96D6D0003BD3B2 /* LaunchScreen.storyboard */,
 				770D29FE1E96D6D0003BD3B2 /* Info.plist */,
 			);
 			path = GoodBoye;
+			sourceTree = "<group>";
+		};
+		770D2A041E96D7FC003BD3B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				770D2A0C1E96DE15003BD3B2 /* Data */,
+				770D2A0B1E96DE0F003BD3B2 /* Services */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		770D2A051E96D801003BD3B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		770D2A061E96D806003BD3B2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				770D2A071E96DB28003BD3B2 /* DogViewController.swift */,
+				770D2A091E96DB42003BD3B2 /* FavoriteDogsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		770D2A0B1E96DE0F003BD3B2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				770D2A0F1E96DFB4003BD3B2 /* ImageService.swift */,
+				770D2A121E96FE4B003BD3B2 /* DogService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		770D2A0C1E96DE15003BD3B2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				770D2A0D1E96DE35003BD3B2 /* Dog.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		7B1ECB950C7334B6B6184480 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0285C881EAA83B499F5C4D8 /* Pods_GoodBoye.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 770D2A011E96D6D0003BD3B2 /* Build configuration list for PBXNativeTarget "GoodBoye" */;
 			buildPhases = (
+				200D65264A6B6C034170B183 /* [CP] Check Pods Manifest.lock */,
 				770D29EB1E96D6D0003BD3B2 /* Sources */,
 				770D29EC1E96D6D0003BD3B2 /* Frameworks */,
 				770D29ED1E96D6D0003BD3B2 /* Resources */,
+				6ACE90CD41C94515EF37DDB6 /* [CP] Embed Pods Frameworks */,
+				1596C3FCB86A4BB58772519C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,13 +211,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1596C3FCB86A4BB58772519C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoodBoye/Pods-GoodBoye-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		200D65264A6B6C034170B183 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6ACE90CD41C94515EF37DDB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoodBoye/Pods-GoodBoye-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		770D29EB1E96D6D0003BD3B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				770D29F51E96D6D0003BD3B2 /* ViewController.swift in Sources */,
+				770D2A0A1E96DB42003BD3B2 /* FavoriteDogsViewController.swift in Sources */,
 				770D29F31E96D6D0003BD3B2 /* AppDelegate.swift in Sources */,
+				770D2A131E96FE4B003BD3B2 /* DogService.swift in Sources */,
+				770D2A0E1E96DE35003BD3B2 /* Dog.swift in Sources */,
+				770D2A101E96DFB4003BD3B2 /* ImageService.swift in Sources */,
+				770D2A081E96DB28003BD3B2 /* DogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +390,7 @@
 		};
 		770D2A021E96D6D0003BD3B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98BD5A66507B4044BA3AF14E /* Pods-GoodBoye.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CLY266LCNG;
@@ -272,6 +404,7 @@
 		};
 		770D2A031E96D6D0003BD3B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E9CF1E2810139DA58F3E53F /* Pods-GoodBoye.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CLY266LCNG;
@@ -302,6 +435,7 @@
 				770D2A031E96D6D0003BD3B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

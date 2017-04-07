@@ -1,0 +1,6 @@
+framework module Pods_GoodBoye {
+  umbrella header "Pods-GoodBoye-umbrella.h"
+
+  export *
+  module * { export * }
+}
