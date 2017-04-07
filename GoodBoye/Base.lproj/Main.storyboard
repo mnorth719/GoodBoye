@@ -26,12 +26,12 @@
                             </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oom-5P-Qz8">
                                 <rect key="frame" x="0.0" y="64" width="375" height="510"/>
-                                <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pupper Goes Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kal-NA-khW">
                                 <rect key="frame" x="83" y="318" width="208.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-aw-fFu">
@@ -45,8 +45,36 @@
                                     <action selector="findDogButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F43-m8-mVA"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQg-Lt-cjb" userLabel="Speech Bubble View" customClass="SpeechBubbleView" customModule="GoodBoye" customModuleProvider="target">
+                                <rect key="frame" x="216" y="520" width="125" height="90"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speechBubble" translatesAutoresizingMaskIntoConstraints="NO" id="Ve0-y3-VkM">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="90"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Woof!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRg-U3-5T8">
+                                        <rect key="frame" x="39" y="21" width="46.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Ve0-y3-VkM" firstAttribute="leading" secondItem="CQg-Lt-cjb" secondAttribute="leading" id="7vV-Vk-n2b"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ve0-y3-VkM" secondAttribute="bottom" id="IWm-zv-RGx"/>
+                                    <constraint firstItem="SRg-U3-5T8" firstAttribute="centerY" secondItem="CQg-Lt-cjb" secondAttribute="centerY" constant="-14" id="MZR-lh-JyQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ve0-y3-VkM" secondAttribute="trailing" id="Mt4-Sw-OQe"/>
+                                    <constraint firstItem="SRg-U3-5T8" firstAttribute="centerX" secondItem="CQg-Lt-cjb" secondAttribute="centerX" id="TF1-RY-0fG"/>
+                                    <constraint firstAttribute="width" constant="125" id="YVq-5A-DQI"/>
+                                    <constraint firstItem="Ve0-y3-VkM" firstAttribute="top" secondItem="CQg-Lt-cjb" secondAttribute="top" id="n3b-zm-cVX"/>
+                                    <constraint firstAttribute="height" constant="90" id="v3E-DL-NTj"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="speechLabel" destination="SRg-U3-5T8" id="hdz-Ks-gUE"/>
+                                </connections>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Njq-wx-Bky" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1NC-Vb-DVH"/>
                             <constraint firstItem="Oom-5P-Qz8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6fg-GO-luq"/>
@@ -57,6 +85,8 @@
                             <constraint firstItem="Njq-wx-Bky" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Opb-iN-s9T"/>
                             <constraint firstAttribute="bottom" secondItem="Oom-5P-Qz8" secondAttribute="bottom" constant="93" id="QCE-Tw-EXq"/>
                             <constraint firstItem="dGr-aw-fFu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S4o-Wf-HR8"/>
+                            <constraint firstItem="dGr-aw-fFu" firstAttribute="centerY" secondItem="CQg-Lt-cjb" secondAttribute="centerY" constant="52.5" id="ffK-sw-59H"/>
+                            <constraint firstItem="CQg-Lt-cjb" firstAttribute="leading" secondItem="dGr-aw-fFu" secondAttribute="trailing" constant="-12" id="h9K-xu-eMx"/>
                             <constraint firstItem="Oom-5P-Qz8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="wFK-Of-rIg"/>
                         </constraints>
                     </view>
@@ -66,6 +96,7 @@
                         <outlet property="activityIndicator" destination="Njq-wx-Bky" id="1EB-iE-Ej9"/>
                         <outlet property="dogImageView" destination="Oom-5P-Qz8" id="w3j-yK-gY2"/>
                         <outlet property="findDogsButton" destination="dGr-aw-fFu" id="eQr-27-8SE"/>
+                        <outlet property="speechBubble" destination="CQg-Lt-cjb" id="bKW-8a-eHZ"/>
                         <outlet property="statusLabel" destination="Kal-NA-khW" id="CKG-IN-miH"/>
                     </connections>
                 </viewController>
@@ -78,9 +109,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x0g-de-VXi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0co-5I-MVm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0co-5I-MVm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -94,5 +126,6 @@
     </scenes>
     <resources>
         <image name="dogEmoji" width="480" height="420"/>
+        <image name="speechBubble" width="300" height="261"/>
     </resources>
 </document>
