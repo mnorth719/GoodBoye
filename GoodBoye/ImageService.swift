@@ -13,6 +13,7 @@ import PromiseKit
 typealias fetchImageCompletion = (_ image: UIImage) -> ()
 
 enum ImageServiceErrorType: Int {
+    case InvalidResponse = 600
     case InvalidImage = 601
     case InvalidURL = 602
 }
@@ -20,8 +21,8 @@ enum ImageServiceErrorType: Int {
 struct ImageService {
     
     enum Constants {
-        static let apiKey = "31bf951f97db4768ae189f4e070a7f63"
-        static let errorDomain = "com.mmn.ImageService"
+        static let apiKey = "ca8759cdb36f4c1991a16a3167a17ef8"
+        static let errorDomain = "com.mmn.WebServices"
     }
     
     static func getImage(withUrl: URL) -> Promise<UIImage> {
@@ -31,19 +32,26 @@ struct ImageService {
                 case .success(let data):
                     if let image = UIImage(data: data) {
                         fulfill(image)
-                    } else {
+                    }else {
                         let error = NSError(
                             domain: Constants.errorDomain,
                             code: ImageServiceErrorType.InvalidImage.rawValue,
                             userInfo: nil
                         )
-                        reject(error as Error)
+                        reject(error)
                     }
                 case .failure(let error):
                     //standard error from AF
                     reject(error)
                 }
             }
+
         }
+    }
+    
+    static func randomImageURL(from: SearchResult) -> URL? {
+        let randIndx = Int(arc4random_uniform(UInt32(from.value.count)))
+        let value = from.value[randIndx]
+        return URL(string: value.contentUrl)
     }
 }

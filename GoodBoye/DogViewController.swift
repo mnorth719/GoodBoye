@@ -16,16 +16,13 @@ class DogViewController: UIViewController {
     
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var findDogsButton: UIButton!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var statusLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        for vc in self.childViewControllers {
-            if vc is FavoriteDogsViewController {
-                //custom shiznit
-            }
-        }
-
         // Do any additional setup after loading the view.
+        self.activityIndicator.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,14 +31,23 @@ class DogViewController: UIViewController {
     }
     
     @IBAction func findDogButtonPushed(_ sender: Any) {
-        
         //Isnt this clean!
         //returns a type safe object of type Dog
         //once fetching is complete
-        DogService.getRandomDog().then { dog in
+        statusLabel.isHidden = true
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        
+        DogService.getRandomDog().then { dog -> Void in
+            self.statusLabel.isHidden = true
             self.dogImageView.image = dog.image
         }.catch { error in
             //display error
+            self.statusLabel.text = "Oops! Had trouble finding a dog. Please try again."
+            self.statusLabel.isHidden = false
+        }.always {
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
         }
     }
 }

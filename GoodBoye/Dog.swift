@@ -11,4 +11,5 @@ import UIKit
 struct Dog {
     var breed: String
     var image: UIImage?
+    static let isLoveBug = true
 }

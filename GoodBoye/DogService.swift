@@ -11,10 +11,9 @@ import PromiseKit
 struct DogService {
     static func getRandomDog() -> Promise<Dog> {
         return Promise { fulfill, reject in
-            
             //TODO... this is not random obviously
             let randomBreed = "husky"
-            guard let url = ImageService.url(forDogBreed: randomBreed) else {
+            guard let searchURL = SearchService.searchURL(forDogBreed: randomBreed) else {
                 let error = NSError(
                     domain: ImageService.Constants.errorDomain,
                     code: ImageServiceErrorType.InvalidURL.rawValue,
@@ -24,7 +23,18 @@ struct DogService {
                 return
             }
             
-            ImageService.getImage(withUrl: url).then { image in
+            SearchService.search(withUrl: searchURL).then { searchResult -> Promise<UIImage> in
+                if let url = ImageService.randomImageURL(from: searchResult) {
+                    return ImageService.getImage(withUrl: url)
+                } else {
+                    let error = NSError(
+                        domain: ImageService.Constants.errorDomain,
+                        code: ImageServiceErrorType.InvalidURL.rawValue,
+                        userInfo: nil
+                    )
+                    throw error
+                }
+            }.then { image in
                 fulfill(Dog(breed: randomBreed, image: image))
             }.catch { error in
                 reject(error)
@@ -33,8 +43,8 @@ struct DogService {
     }
 }
 
-extension ImageService {
-    static func url(forDogBreed: String) -> URL? {
+extension SearchService {
+    static func searchURL(forDogBreed: String) -> URL? {
         return URL(string:"https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=\(forDogBreed)&count=20&offset=0&mkt=en-us&safeSearch=Moderate")
     }
 }
