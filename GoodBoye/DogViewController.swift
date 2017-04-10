@@ -10,17 +10,35 @@ import UIKit
 
 class DogViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicatorContainer: UIView!
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var findDogsButton: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var speechBubble: SpeechBubbleView!
     private var barkTimer: Timer?
+    private var activityIndicator: GBActivityIndicator?
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if activityIndicator == nil {
+            let frame = CGRect(
+                x: 0,
+                y: 0,
+                width: activityIndicatorContainer.frame.width,
+                height: activityIndicatorContainer.frame.height
+            )
+            
+            activityIndicator = Bundle.main.loadNibNamed("GBActivityIndicator", owner: activityIndicator, options: nil)?.first as? GBActivityIndicator
+            activityIndicator?.frame = frame
+            activityIndicatorContainer.addSubview(activityIndicator!)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.activityIndicator.isHidden = true
     }
     
     deinit {
@@ -51,8 +69,8 @@ class DogViewController: UIViewController {
         //returns a type safe object of type Dog
         //once fetching is complete
         statusLabel.isHidden = true
-        activityIndicator.startAnimating()
-        activityIndicator.isHidden = false
+        showLoadingIndicator()
+        
         
         DogService.getRandomDog().then { dog -> Void in
             self.statusLabel.isHidden = true
@@ -62,8 +80,7 @@ class DogViewController: UIViewController {
             self.statusLabel.text = "Oops! Had trouble finding a dog. Please try again."
             self.statusLabel.isHidden = false
         }.always {
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.isHidden = true
+            self.hideLoadingIndicator()
         }
     }
     
@@ -79,5 +96,40 @@ class DogViewController: UIViewController {
                 })
             })
         }
+    }
+    
+    private func showLoadingIndicator() {
+        if let activityIndicator = activityIndicator {
+            activityIndicator.showLoadingIndicator()
+        }
+    }
+    
+    private func hideLoadingIndicator() {
+        if let activityIndicator = activityIndicator {
+            activityIndicator.hideLoadingIndicator()
+        }
+    }
+    
+    @IBAction func shareButtonPushed(_ sender: Any) {
+        shareImage()
+    }
+    
+    @IBAction func favoriteButtonPushed(_ sender: Any) {
+        //TODO
+    }
+    
+    private func shareImage() {
+        // image to share
+        guard let image = dogImageView.image else {
+            return
+        }
+        
+        // set up activity view controller
+        let imageToShare = [image]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }
