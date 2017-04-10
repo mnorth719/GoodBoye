@@ -77,6 +77,7 @@ class DogViewController: UIViewController {
             self.dogImageView.image = dog.image
         }.catch { error in
             //display error
+            self.dogImageView.image = nil
             self.statusLabel.text = "Oops! Had trouble finding a dog. Please try again."
             self.statusLabel.isHidden = false
         }.always {
@@ -88,10 +89,10 @@ class DogViewController: UIViewController {
         let dogTransform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         DispatchQueue.main.async {
             self.speechBubble.show(text: "Woof!")
-            UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: .beginFromCurrentState, animations: {
+            UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: [.beginFromCurrentState, .allowUserInteraction], animations: {
                 self.findDogsButton.transform = dogTransform
             }, completion: {success in
-                UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: .beginFromCurrentState, animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: [.beginFromCurrentState, .allowUserInteraction], animations: {
                     self.findDogsButton.transform = CGAffineTransform.identity
                 })
             })
