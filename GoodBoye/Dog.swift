@@ -9,9 +9,14 @@
 import UIKit
 import PromiseKit
 
+struct DogImage {
+    var image: UIImage
+    var imageId: String
+}
+
 struct Dog {
     var breed: String
-    var image: UIImage?
+    var dogImage: DogImage?
     static let isLoveBug = true
 }
 
@@ -32,5 +37,13 @@ extension Dog {
             let error = NSError(domain: "com.goodBoye.error", code: 700, userInfo: nil)
             reject(error)
         }
+    }
+    
+    func addToFavorites() {
+        FavoriteService.shared.save(favorite: self)
+    }
+    
+    func removeFromFavorites() {
+        FavoriteService.shared.remove(favorite: self)
     }
 }

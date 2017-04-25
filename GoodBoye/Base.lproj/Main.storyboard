@@ -25,15 +25,53 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="510"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oom-5P-Qz8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="446"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGZ-Y3-rRl" userLabel="options view">
+                                        <rect key="frame" x="0.0" y="446" width="375" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddo-rb-CeU" userLabel="share">
+                                                <rect key="frame" x="16" y="8" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="eMg-yc-4Ju"/>
+                                                    <constraint firstAttribute="height" constant="44" id="wIR-WV-Omm"/>
+                                                </constraints>
+                                                <state key="normal" image="share"/>
+                                                <connections>
+                                                    <action selector="shareButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bKF-vO-uVZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyA-bc-fF9" userLabel="favorite">
+                                                <rect key="frame" x="315" y="8" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="9EY-Jd-HBX"/>
+                                                    <constraint firstAttribute="height" constant="44" id="PGu-Tq-WGz"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="favorite"/>
+                                                <connections>
+                                                    <action selector="favoriteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8jy-AP-EbF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="L4c-dK-q4S"/>
+                                            <constraint firstAttribute="trailing" secondItem="vyA-bc-fF9" secondAttribute="trailing" constant="16" id="NKi-qu-FMC"/>
+                                            <constraint firstItem="ddo-rb-CeU" firstAttribute="leading" secondItem="OGZ-Y3-rRl" secondAttribute="leading" constant="16" id="OeT-4R-aJ5"/>
+                                            <constraint firstItem="ddo-rb-CeU" firstAttribute="top" secondItem="OGZ-Y3-rRl" secondAttribute="top" constant="8" id="c2R-Sp-bud"/>
+                                            <constraint firstItem="vyA-bc-fF9" firstAttribute="top" secondItem="OGZ-Y3-rRl" secondAttribute="top" constant="8" id="kP4-Zu-5kD"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Oom-5P-Qz8" firstAttribute="leading" secondItem="HcT-8j-SCv" secondAttribute="leading" id="3MK-0W-TK5"/>
+                                    <constraint firstAttribute="bottom" secondItem="OGZ-Y3-rRl" secondAttribute="bottom" id="9jB-FF-SR6"/>
+                                    <constraint firstItem="OGZ-Y3-rRl" firstAttribute="leading" secondItem="HcT-8j-SCv" secondAttribute="leading" id="A50-cw-ZuR"/>
+                                    <constraint firstAttribute="trailing" secondItem="OGZ-Y3-rRl" secondAttribute="trailing" id="IzY-PV-Phj"/>
                                     <constraint firstAttribute="trailing" secondItem="Oom-5P-Qz8" secondAttribute="trailing" id="JEN-CZ-uMT"/>
-                                    <constraint firstAttribute="bottom" secondItem="Oom-5P-Qz8" secondAttribute="bottom" id="iKh-kU-KWk"/>
+                                    <constraint firstAttribute="bottom" secondItem="Oom-5P-Qz8" secondAttribute="bottom" constant="64" id="iKh-kU-KWk"/>
                                     <constraint firstItem="Oom-5P-Qz8" firstAttribute="top" secondItem="HcT-8j-SCv" secondAttribute="top" id="kRQ-Pf-tUs"/>
                                 </constraints>
                             </view>
@@ -105,12 +143,20 @@
                             <constraint firstItem="HcT-8j-SCv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="yDb-my-yBs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Good Boye!" id="yJu-cP-Xi8"/>
+                    <navigationItem key="navigationItem" title="Good Boye!" id="yJu-cP-Xi8">
+                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="kZc-Bk-LTX">
+                            <connections>
+                                <segue destination="Gss-jm-E8l" kind="show" id="xre-tG-VRl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="activityIndicatorContainer" destination="EAl-Ru-9e6" id="cqX-Wi-keu"/>
                         <outlet property="dogImageView" destination="Oom-5P-Qz8" id="w3j-yK-gY2"/>
+                        <outlet property="favoriteButton" destination="vyA-bc-fF9" id="bB2-GB-fGJ"/>
                         <outlet property="findDogsButton" destination="dGr-aw-fFu" id="eQr-27-8SE"/>
+                        <outlet property="optionsView" destination="OGZ-Y3-rRl" id="8RJ-y6-Ua3"/>
                         <outlet property="speechBubble" destination="CQg-Lt-cjb" id="bKW-8a-eHZ"/>
                         <outlet property="statusLabel" destination="Kal-NA-khW" id="CKG-IN-miH"/>
                     </connections>
@@ -119,12 +165,58 @@
             </objects>
             <point key="canvasLocation" x="741.60000000000002" y="117.39130434782609"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="HRp-G5-hyC">
+            <objects>
+                <viewController id="Gss-jm-E8l" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="flG-ly-W1b"/>
+                        <viewControllerLayoutGuide type="bottom" id="jLq-zZ-z33"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vRA-tn-edX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-sR-CdT">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bfA-F0-45w">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QgO-Zk-4Yv">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dIX-sR-CdT" firstAttribute="top" secondItem="vRA-tn-edX" secondAttribute="top" constant="64" id="0nB-cr-1Fq"/>
+                            <constraint firstItem="dIX-sR-CdT" firstAttribute="leading" secondItem="vRA-tn-edX" secondAttribute="leading" id="56o-EB-Zlg"/>
+                            <constraint firstAttribute="bottom" secondItem="dIX-sR-CdT" secondAttribute="bottom" id="Ip5-0o-f8o"/>
+                            <constraint firstAttribute="trailing" secondItem="dIX-sR-CdT" secondAttribute="trailing" id="pnG-RK-mWb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ahK-k0-8oN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.8" y="116.49175412293854"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="j0q-kv-hVa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x0g-de-VXi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0co-5I-MVm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0co-5I-MVm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -141,6 +233,8 @@
     </scenes>
     <resources>
         <image name="dogEmoji" width="480" height="420"/>
+        <image name="favorite" width="695" height="598"/>
+        <image name="share" width="694" height="603"/>
         <image name="speechBubble" width="300" height="261"/>
     </resources>
 </document>

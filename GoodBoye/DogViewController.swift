@@ -15,8 +15,12 @@ class DogViewController: UIViewController {
     @IBOutlet weak var findDogsButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var speechBubble: SpeechBubbleView!
+    @IBOutlet weak var optionsView: UIView!
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     private var barkTimer: Timer?
     private var activityIndicator: GBActivityIndicator?
+    private var currentDog: Dog?
     
     
     override func viewDidLayoutSubviews() {
@@ -38,6 +42,7 @@ class DogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.optionsView.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -70,18 +75,24 @@ class DogViewController: UIViewController {
         //once fetching is complete
         statusLabel.isHidden = true
         showLoadingIndicator()
-        
+        findDogsButton.isEnabled = false
         
         DogService.getRandomDog().then { dog -> Void in
             self.statusLabel.isHidden = true
-            self.dogImageView.image = dog.image
+            print("dog id: \(dog.dogImage?.imageId)")
+            self.dogImageView.image = dog.dogImage?.image
+            self.currentDog = dog
+            self.updateFavoriteButon()
+            self.optionsView.isHidden = false
         }.catch { error in
             //display error
             self.dogImageView.image = nil
             self.statusLabel.text = "Oops! Had trouble finding a dog. Please try again."
             self.statusLabel.isHidden = false
+            self.optionsView.isHidden = true
         }.always {
             self.hideLoadingIndicator()
+            self.findDogsButton.isEnabled = true
         }
     }
     
@@ -99,8 +110,21 @@ class DogViewController: UIViewController {
         }
     }
     
+    private func updateFavoriteButon() {
+        guard let dog = currentDog else {
+            return
+        }
+
+        if FavoriteService.shared.isFavorite(dog: dog) {
+            self.favoriteButton.setImage(UIImage(named: "heartSelected"), for: .normal)
+        } else {
+            self.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
+        }
+    }
+    
     private func showLoadingIndicator() {
         if let activityIndicator = activityIndicator {
+            activityIndicatorContainer.isHidden = false
             activityIndicator.showLoadingIndicator()
         }
     }
@@ -108,15 +132,26 @@ class DogViewController: UIViewController {
     private func hideLoadingIndicator() {
         if let activityIndicator = activityIndicator {
             activityIndicator.hideLoadingIndicator()
+            activityIndicatorContainer.isHidden = true
         }
+    }
+    
+    @IBAction func favoriteButtonPushed(_ sender: Any) {
+        guard let dog = currentDog else {
+            return
+        }
+        
+        if FavoriteService.shared.isFavorite(dog: dog) {
+            FavoriteService.shared.remove(favorite: dog)
+        } else {
+            FavoriteService.shared.save(favorite: dog)
+        }
+        
+        self.updateFavoriteButon()
     }
     
     @IBAction func shareButtonPushed(_ sender: Any) {
         shareImage()
-    }
-    
-    @IBAction func favoriteButtonPushed(_ sender: Any) {
-        //TODO
     }
     
     private func shareImage() {
