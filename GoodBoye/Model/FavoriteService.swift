@@ -24,8 +24,9 @@ class FavoriteService {
                     let dogs = try self.managedObjectContext.fetch(fetchRequest)
                     var returnArray = [GBDog]()
                     for dog in dogs {
-                        if let breed = dog.breed, let url = dog.imageURL {
-                            let gbDog = GBDog(breed: breed, dogImage: nil, imageURL: url)
+                        if let breed = dog.breed, let url = dog.imageURL, let id = dog.id {
+                            let dogImage = DogImage(image: nil, imageId: id, imageURL: url)
+                            let gbDog = GBDog(breed: breed, dogImage: dogImage, imageURL: url)
                             returnArray.append(gbDog)
                         } else {
                             print("malformed dog data!!!")

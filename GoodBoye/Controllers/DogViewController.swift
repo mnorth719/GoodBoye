@@ -10,18 +10,15 @@ import UIKit
 
 class DogViewController: UIViewController {
     
-    @IBOutlet weak var activityIndicatorContainer: UIView!
-    @IBOutlet weak var dogImageView: UIImageView!
-    @IBOutlet weak var findDogsButton: UIButton!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var speechBubble: SpeechBubbleView!
-    @IBOutlet weak var optionsView: UIView!
-    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet fileprivate weak var dogViewContainer: UIView!
+    @IBOutlet fileprivate weak var activityIndicatorContainer: UIView!
+    @IBOutlet fileprivate weak var findDogsButton: UIButton!
+    @IBOutlet fileprivate weak var statusLabel: UILabel!
+    @IBOutlet fileprivate weak var speechBubble: SpeechBubbleView!
     
     private var barkTimer: Timer?
     private var activityIndicator: GBActivityIndicator?
-    private var currentDog: GBDog?
-    
+    private var dogView: GBDogView?
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -38,11 +35,24 @@ class DogViewController: UIViewController {
             activityIndicator?.frame = frame
             activityIndicatorContainer.addSubview(activityIndicator!)
         }
+        
+        if dogView == nil {
+            let frame = CGRect(
+                x: 0,
+                y: 0,
+                width: dogViewContainer.frame.width,
+                height: dogViewContainer.frame.height
+            )
+            
+            dogView = Bundle.main.loadNibNamed("GBDogView", owner: dogView, options: nil)?.first as? GBDogView
+            dogView?.frame = frame
+            dogView?.delegate = self
+            dogViewContainer.addSubview(dogView!)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.optionsView.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -58,11 +68,6 @@ class DogViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        barkTimer?.invalidate()
-        barkTimer = nil
-        
-        barkTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(barkDog), userInfo: nil, repeats: true)
-        
         FavoriteService.shared.getFavoriteDogs().then { dogs -> Void in
             print("favorite dogs: \(dogs.count)")
         }.catch { error in
@@ -86,52 +91,15 @@ class DogViewController: UIViewController {
         DogService.getRandomDog().then { dog -> Void in
             self.statusLabel.isHidden = true
             print("dog id: \(dog.dogImage?.imageId ?? "")")
-            self.dogImageView.image = dog.dogImage?.image
-            self.currentDog = dog
-            self.updateFavoriteButon()
-            self.optionsView.isHidden = false
+            self.dogView?.dog = dog
         }.catch { error in
             //display error
-            self.dogImageView.image = nil
+            self.dogView?.dog = nil
             self.statusLabel.text = "Oops! Had trouble finding a dog. Please try again."
             self.statusLabel.isHidden = false
-            self.optionsView.isHidden = true
         }.always {
             self.hideLoadingIndicator()
             self.findDogsButton.isEnabled = true
-        }
-    }
-    
-    @objc func barkDog() {
-        let dogTransform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        DispatchQueue.main.async {
-            self.speechBubble.show(text: "Woof!")
-            UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: [.beginFromCurrentState, .allowUserInteraction], animations: {
-                self.findDogsButton.transform = dogTransform
-            }, completion: {success in
-                UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: [.beginFromCurrentState, .allowUserInteraction], animations: {
-                    self.findDogsButton.transform = CGAffineTransform.identity
-                })
-            })
-        }
-    }
-    
-    private func updateFavoriteButon() {
-        guard let dog = currentDog else {
-            return
-        }
-        
-        FavoriteService.shared.isFavorite(dog: dog).then { isFavorite -> Void in
-            DispatchQueue.main.async {
-                if isFavorite {
-                    self.favoriteButton.setImage(UIImage(named: "heartSelected"), for: .normal)
-                } else {
-                    self.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
-                }
-            }
-        }.catch { error in
-            print("error in favorite service!! \(error.localizedDescription)")
-            self.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
         }
     }
     
@@ -148,35 +116,10 @@ class DogViewController: UIViewController {
             activityIndicatorContainer.isHidden = true
         }
     }
-    
-    @IBAction func favoriteButtonPushed(_ sender: Any) {
-        guard let dog = currentDog else {
-            return
-        }
-        
-        FavoriteService.shared.isFavorite(dog: dog).then { isFavorite -> Void in
-            if isFavorite {
-                dog.removeFromFavorites()
-                self.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
-            } else {
-                dog.addToFavorites()
-                self.favoriteButton.setImage(UIImage(named: "heartSelected"), for: .normal)
-            }
-        }.catch { error in
-            print("error in favorite service!! \(error.localizedDescription)")
-        }
-    }
-    
-    @IBAction func shareButtonPushed(_ sender: Any) {
-        shareImage()
-    }
-    
-    private func shareImage() {
-        // image to share
-        guard let image = dogImageView.image else {
-            return
-        }
-        
+}
+
+extension UIViewController: DogViewDelegate {
+    func shouldShare(image: UIImage) {
         // set up activity view controller
         let imageToShare = [image]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)

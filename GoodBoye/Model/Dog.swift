@@ -10,7 +10,7 @@ import UIKit
 import PromiseKit
 
 struct DogImage {
-    var image: UIImage
+    var image: UIImage?
     var imageId: String
     var imageURL: String
 }

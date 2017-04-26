@@ -21,67 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcT-8j-SCv">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcT-8j-SCv" userLabel="Dog Container">
                                 <rect key="frame" x="0.0" y="64" width="375" height="510"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oom-5P-Qz8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="446"/>
-                                        <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGZ-Y3-rRl" userLabel="options view">
-                                        <rect key="frame" x="0.0" y="446" width="375" height="64"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddo-rb-CeU" userLabel="share">
-                                                <rect key="frame" x="16" y="8" width="44" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="44" id="eMg-yc-4Ju"/>
-                                                    <constraint firstAttribute="height" constant="44" id="wIR-WV-Omm"/>
-                                                </constraints>
-                                                <state key="normal" image="share"/>
-                                                <connections>
-                                                    <action selector="shareButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bKF-vO-uVZ"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyA-bc-fF9" userLabel="favorite">
-                                                <rect key="frame" x="315" y="8" width="44" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="44" id="9EY-Jd-HBX"/>
-                                                    <constraint firstAttribute="height" constant="44" id="PGu-Tq-WGz"/>
-                                                </constraints>
-                                                <state key="normal" title="Button" image="favorite"/>
-                                                <connections>
-                                                    <action selector="favoriteButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8jy-AP-EbF"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="L4c-dK-q4S"/>
-                                            <constraint firstAttribute="trailing" secondItem="vyA-bc-fF9" secondAttribute="trailing" constant="16" id="NKi-qu-FMC"/>
-                                            <constraint firstItem="ddo-rb-CeU" firstAttribute="leading" secondItem="OGZ-Y3-rRl" secondAttribute="leading" constant="16" id="OeT-4R-aJ5"/>
-                                            <constraint firstItem="ddo-rb-CeU" firstAttribute="top" secondItem="OGZ-Y3-rRl" secondAttribute="top" constant="8" id="c2R-Sp-bud"/>
-                                            <constraint firstItem="vyA-bc-fF9" firstAttribute="top" secondItem="OGZ-Y3-rRl" secondAttribute="top" constant="8" id="kP4-Zu-5kD"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Oom-5P-Qz8" firstAttribute="leading" secondItem="HcT-8j-SCv" secondAttribute="leading" id="3MK-0W-TK5"/>
-                                    <constraint firstAttribute="bottom" secondItem="OGZ-Y3-rRl" secondAttribute="bottom" id="9jB-FF-SR6"/>
-                                    <constraint firstItem="OGZ-Y3-rRl" firstAttribute="leading" secondItem="HcT-8j-SCv" secondAttribute="leading" id="A50-cw-ZuR"/>
-                                    <constraint firstAttribute="trailing" secondItem="OGZ-Y3-rRl" secondAttribute="trailing" id="IzY-PV-Phj"/>
-                                    <constraint firstAttribute="trailing" secondItem="Oom-5P-Qz8" secondAttribute="trailing" id="JEN-CZ-uMT"/>
-                                    <constraint firstAttribute="bottom" secondItem="Oom-5P-Qz8" secondAttribute="bottom" constant="64" id="iKh-kU-KWk"/>
-                                    <constraint firstItem="Oom-5P-Qz8" firstAttribute="top" secondItem="HcT-8j-SCv" secondAttribute="top" id="kRQ-Pf-tUs"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EAl-Ru-9e6" userLabel="activityIndicatorContainer">
                                 <rect key="frame" x="0.0" y="64" width="375" height="510"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pupper Goes Here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Kal-NA-khW">
-                                <rect key="frame" x="83.5" y="318" width="208.5" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Find Some Dogs!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Kal-NA-khW">
+                                <rect key="frame" x="60.5" y="318" width="254.5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="280" id="7iH-LO-Oa8"/>
                                 </constraints>
@@ -153,10 +103,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="activityIndicatorContainer" destination="EAl-Ru-9e6" id="cqX-Wi-keu"/>
-                        <outlet property="dogImageView" destination="Oom-5P-Qz8" id="w3j-yK-gY2"/>
-                        <outlet property="favoriteButton" destination="vyA-bc-fF9" id="bB2-GB-fGJ"/>
+                        <outlet property="dogViewContainer" destination="HcT-8j-SCv" id="vna-mR-n0S"/>
                         <outlet property="findDogsButton" destination="dGr-aw-fFu" id="eQr-27-8SE"/>
-                        <outlet property="optionsView" destination="OGZ-Y3-rRl" id="8RJ-y6-Ua3"/>
                         <outlet property="speechBubble" destination="CQg-Lt-cjb" id="bKW-8a-eHZ"/>
                         <outlet property="statusLabel" destination="Kal-NA-khW" id="CKG-IN-miH"/>
                     </connections>
@@ -165,7 +113,7 @@
             </objects>
             <point key="canvasLocation" x="741.60000000000002" y="117.39130434782609"/>
         </scene>
-        <!--Favorite Dogs View Controller-->
+        <!--Favorites-->
         <scene sceneID="HRp-G5-hyC">
             <objects>
                 <viewController id="Gss-jm-E8l" customClass="FavoriteDogsViewController" customModule="GoodBoye" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,42 +125,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You havent't added any favorite dogs yet 🐩Get on that!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="BcQ-UG-KeR">
+                                <rect key="frame" x="48.5" y="303" width="278" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="280" id="pV4-OG-d36"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-sR-CdT">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bfA-F0-45w">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="bfA-F0-45w">
+                                    <size key="itemSize" width="120" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QgO-Zk-4Yv">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="dIX-sR-CdT" firstAttribute="top" secondItem="vRA-tn-edX" secondAttribute="top" constant="64" id="0nB-cr-1Fq"/>
+                            <constraint firstItem="dIX-sR-CdT" firstAttribute="top" secondItem="vRA-tn-edX" secondAttribute="top" id="0nB-cr-1Fq"/>
                             <constraint firstItem="dIX-sR-CdT" firstAttribute="leading" secondItem="vRA-tn-edX" secondAttribute="leading" id="56o-EB-Zlg"/>
+                            <constraint firstItem="BcQ-UG-KeR" firstAttribute="centerY" secondItem="vRA-tn-edX" secondAttribute="centerY" id="6of-xx-SCG"/>
                             <constraint firstAttribute="bottom" secondItem="dIX-sR-CdT" secondAttribute="bottom" id="Ip5-0o-f8o"/>
+                            <constraint firstItem="BcQ-UG-KeR" firstAttribute="centerX" secondItem="vRA-tn-edX" secondAttribute="centerX" id="is8-8V-VoW"/>
                             <constraint firstAttribute="trailing" secondItem="dIX-sR-CdT" secondAttribute="trailing" id="pnG-RK-mWb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Favorites" id="EQm-ag-TRi"/>
                     <connections>
+                        <outlet property="blankStateLabel" destination="BcQ-UG-KeR" id="2fb-JQ-PhL"/>
                         <outlet property="collectionView" destination="dIX-sR-CdT" id="Oax-mt-ZUH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahK-k0-8oN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1576.8" y="116.49175412293854"/>
+        </scene>
+        <!--Dog Hero Controller-->
+        <scene sceneID="zkf-2b-5mi">
+            <objects>
+                <viewController storyboardIdentifier="DogHeroViewController" id="Q0S-A1-lxH" userLabel="Dog Hero Controller" customClass="DogHeroViewController" customModule="GoodBoye" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wfh-8a-a6Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="4gU-ZU-Rkp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P7a-4B-obX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jWf-pa-Aj5" userLabel="dog view container">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q9b-hR-Jw5"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="dogViewContainer" destination="jWf-pa-Aj5" id="moF-eT-0ng"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywk-eq-4s6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2356" y="118.29085457271366"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j0q-kv-hVa">
@@ -236,8 +218,6 @@
     </scenes>
     <resources>
         <image name="dogEmoji" width="480" height="420"/>
-        <image name="favorite" width="695" height="598"/>
-        <image name="share" width="694" height="603"/>
         <image name="speechBubble" width="300" height="261"/>
     </resources>
 </document>
