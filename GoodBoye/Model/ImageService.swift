@@ -18,6 +18,7 @@ enum ImageServiceErrorType: Int {
     case InvalidURL = 602
 }
 
+
 struct ImageService {
     
     enum Constants {
@@ -25,13 +26,14 @@ struct ImageService {
         static let errorDomain = "com.mmn.WebServices"
     }
     
-    static func getImage(withUrl: URL) -> Promise<UIImage> {
+    static func getImage(withUrl: URL, imageId: String) -> Promise<DogImage> {
         return Promise { fulfill, reject in
             request(withUrl).validate().responseData { response in
                 switch response.result {
                 case .success(let data):
                     if let image = UIImage(data: data) {
-                        fulfill(image)
+                        let dogImage = DogImage(image: image, imageId: imageId, imageURL: withUrl.absoluteString)
+                        fulfill(dogImage)
                     }else {
                         let error = NSError(
                             domain: Constants.errorDomain,
@@ -45,13 +47,11 @@ struct ImageService {
                     reject(error)
                 }
             }
-
         }
     }
     
-    static func randomImageURL(from: SearchResult) -> URL? {
+    static func randomValue(from: SearchResult) -> Value? {
         let randIndx = Int(arc4random_uniform(UInt32(from.value.count)))
-        let value = from.value[randIndx]
-        return URL(string: value.contentUrl)
+        return from.value[randIndx]
     }
 }

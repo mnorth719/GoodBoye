@@ -7,41 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225C7FCA1EB04ED600EF8C31 /* GBModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FC81EB04ED600EF8C31 /* GBModel.xcdatamodeld */; };
+		225C7FD21EB069A700EF8C31 /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FD01EB069A700EF8C31 /* DogViewController.swift */; };
+		225C7FD31EB069A700EF8C31 /* FavoriteDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FD11EB069A700EF8C31 /* FavoriteDogsViewController.swift */; };
+		225C7FD71EB06A0400EF8C31 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FD41EB06A0400EF8C31 /* AppConstants.swift */; };
+		225C7FD81EB06A0400EF8C31 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FD51EB06A0400EF8C31 /* Dog.swift */; };
+		225C7FD91EB06A0400EF8C31 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FD61EB06A0400EF8C31 /* SearchResult.swift */; };
+		225C7FDF1EB06A1300EF8C31 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FDA1EB06A1300EF8C31 /* CoreDataManager.swift */; };
+		225C7FE01EB06A1300EF8C31 /* DogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FDB1EB06A1300EF8C31 /* DogService.swift */; };
+		225C7FE11EB06A1300EF8C31 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FDC1EB06A1300EF8C31 /* FavoriteService.swift */; };
+		225C7FE21EB06A1300EF8C31 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FDD1EB06A1300EF8C31 /* ImageService.swift */; };
+		225C7FE31EB06A1300EF8C31 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FDE1EB06A1300EF8C31 /* SearchService.swift */; };
+		225C7FE71EB06A2300EF8C31 /* GBActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FE41EB06A2300EF8C31 /* GBActivityIndicator.swift */; };
+		225C7FE81EB06A2300EF8C31 /* GBActivityIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225C7FE51EB06A2300EF8C31 /* GBActivityIndicator.xib */; };
+		225C7FE91EB06A2300EF8C31 /* SpeechBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FE61EB06A2300EF8C31 /* SpeechBubbleView.swift */; };
+		225C7FEC1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FEA1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.swift */; };
+		225C7FED1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225C7FEB1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.xib */; };
+		225C7FF11EB073D500EF8C31 /* GBDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FF01EB073D500EF8C31 /* GBDogView.swift */; };
+		225C7FF51EB073FE00EF8C31 /* GBDogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225C7FF41EB073FE00EF8C31 /* GBDogView.xib */; };
+		225C7FF71EB07CAD00EF8C31 /* DogHeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FF61EB07CAD00EF8C31 /* DogHeroViewController.swift */; };
+		225C7FF91EB0866900EF8C31 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 225C7FF81EB0866900EF8C31 /* Default-568h@2x.png */; };
 		770D29F31E96D6D0003BD3B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D29F21E96D6D0003BD3B2 /* AppDelegate.swift */; };
 		770D29F81E96D6D0003BD3B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 770D29F61E96D6D0003BD3B2 /* Main.storyboard */; };
 		770D29FA1E96D6D0003BD3B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 770D29F91E96D6D0003BD3B2 /* Assets.xcassets */; };
 		770D29FD1E96D6D0003BD3B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 770D29FB1E96D6D0003BD3B2 /* LaunchScreen.storyboard */; };
-		770D2A081E96DB28003BD3B2 /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A071E96DB28003BD3B2 /* DogViewController.swift */; };
-		770D2A0A1E96DB42003BD3B2 /* FavoriteDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A091E96DB42003BD3B2 /* FavoriteDogsViewController.swift */; };
-		770D2A0E1E96DE35003BD3B2 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A0D1E96DE35003BD3B2 /* Dog.swift */; };
-		770D2A101E96DFB4003BD3B2 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A0F1E96DFB4003BD3B2 /* ImageService.swift */; };
-		770D2A131E96FE4B003BD3B2 /* DogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A121E96FE4B003BD3B2 /* DogService.swift */; };
-		770D2A151E98024E003BD3B2 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A141E98024E003BD3B2 /* SearchResult.swift */; };
-		770D2A171E980683003BD3B2 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A161E980683003BD3B2 /* SearchService.swift */; };
-		770D2A1B1E981D26003BD3B2 /* SpeechBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A1A1E981D26003BD3B2 /* SpeechBubbleView.swift */; };
-		770D2A1D1E9833B5003BD3B2 /* GBActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D2A1C1E9833B5003BD3B2 /* GBActivityIndicator.swift */; };
-		770D2A201E9BF7D0003BD3B2 /* GBActivityIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 770D2A1F1E9BF7D0003BD3B2 /* GBActivityIndicator.xib */; };
 		770D2A251E9C0E64003BD3B2 /* breeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 770D2A241E9C0E64003BD3B2 /* breeds.json */; };
 		DF0A6AC721943F737189D7BD /* Pods_GoodBoye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0285C881EAA83B499F5C4D8 /* Pods_GoodBoye.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		225C7FC91EB04ED600EF8C31 /* GBModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GBModel.xcdatamodel; sourceTree = "<group>"; };
+		225C7FD01EB069A700EF8C31 /* DogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DogViewController.swift; path = Controllers/DogViewController.swift; sourceTree = "<group>"; };
+		225C7FD11EB069A700EF8C31 /* FavoriteDogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteDogsViewController.swift; path = Controllers/FavoriteDogsViewController.swift; sourceTree = "<group>"; };
+		225C7FD41EB06A0400EF8C31 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConstants.swift; path = Model/AppConstants.swift; sourceTree = "<group>"; };
+		225C7FD51EB06A0400EF8C31 /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dog.swift; path = Model/Dog.swift; sourceTree = "<group>"; };
+		225C7FD61EB06A0400EF8C31 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResult.swift; path = Model/SearchResult.swift; sourceTree = "<group>"; };
+		225C7FDA1EB06A1300EF8C31 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Model/CoreDataManager.swift; sourceTree = "<group>"; };
+		225C7FDB1EB06A1300EF8C31 /* DogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DogService.swift; path = Model/DogService.swift; sourceTree = "<group>"; };
+		225C7FDC1EB06A1300EF8C31 /* FavoriteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteService.swift; path = Model/FavoriteService.swift; sourceTree = "<group>"; };
+		225C7FDD1EB06A1300EF8C31 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageService.swift; path = Model/ImageService.swift; sourceTree = "<group>"; };
+		225C7FDE1EB06A1300EF8C31 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchService.swift; path = Model/SearchService.swift; sourceTree = "<group>"; };
+		225C7FE41EB06A2300EF8C31 /* GBActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GBActivityIndicator.swift; path = Views/GBActivityIndicator.swift; sourceTree = "<group>"; };
+		225C7FE51EB06A2300EF8C31 /* GBActivityIndicator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GBActivityIndicator.xib; path = Views/GBActivityIndicator.xib; sourceTree = "<group>"; };
+		225C7FE61EB06A2300EF8C31 /* SpeechBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeechBubbleView.swift; path = Views/SpeechBubbleView.swift; sourceTree = "<group>"; };
+		225C7FEA1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteDogCollectionViewCell.swift; path = Views/FavoriteDogCollectionViewCell.swift; sourceTree = "<group>"; };
+		225C7FEB1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavoriteDogCollectionViewCell.xib; path = Views/FavoriteDogCollectionViewCell.xib; sourceTree = "<group>"; };
+		225C7FF01EB073D500EF8C31 /* GBDogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GBDogView.swift; path = Views/GBDogView.swift; sourceTree = "<group>"; };
+		225C7FF41EB073FE00EF8C31 /* GBDogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GBDogView.xib; path = Views/GBDogView.xib; sourceTree = "<group>"; };
+		225C7FF61EB07CAD00EF8C31 /* DogHeroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogHeroViewController.swift; sourceTree = "<group>"; };
+		225C7FF81EB0866900EF8C31 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		770D29EF1E96D6D0003BD3B2 /* GoodBoye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodBoye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		770D29F21E96D6D0003BD3B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		770D29F71E96D6D0003BD3B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		770D29F91E96D6D0003BD3B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		770D29FC1E96D6D0003BD3B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		770D29FE1E96D6D0003BD3B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		770D2A071E96DB28003BD3B2 /* DogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
-		770D2A091E96DB42003BD3B2 /* FavoriteDogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteDogsViewController.swift; sourceTree = "<group>"; };
-		770D2A0D1E96DE35003BD3B2 /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
-		770D2A0F1E96DFB4003BD3B2 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
-		770D2A121E96FE4B003BD3B2 /* DogService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogService.swift; sourceTree = "<group>"; };
-		770D2A141E98024E003BD3B2 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
-		770D2A161E980683003BD3B2 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
-		770D2A1A1E981D26003BD3B2 /* SpeechBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechBubbleView.swift; sourceTree = "<group>"; };
-		770D2A1C1E9833B5003BD3B2 /* GBActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBActivityIndicator.swift; sourceTree = "<group>"; };
-		770D2A1F1E9BF7D0003BD3B2 /* GBActivityIndicator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GBActivityIndicator.xib; sourceTree = "<group>"; };
 		770D2A241E9C0E64003BD3B2 /* breeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = breeds.json; sourceTree = "<group>"; };
 		98BD5A66507B4044BA3AF14E /* Pods-GoodBoye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodBoye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodBoye/Pods-GoodBoye.debug.xcconfig"; sourceTree = "<group>"; };
 		9E9CF1E2810139DA58F3E53F /* Pods-GoodBoye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodBoye.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodBoye/Pods-GoodBoye.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,9 +89,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		225C7FCF1EB0694E00EF8C31 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				225C7FEA1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.swift */,
+				225C7FEB1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.xib */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
 		770D29E61E96D6D0003BD3B2 = {
 			isa = PBXGroup;
 			children = (
+				225C7FF81EB0866900EF8C31 /* Default-568h@2x.png */,
 				770D29F11E96D6D0003BD3B2 /* GoodBoye */,
 				770D29F01E96D6D0003BD3B2 /* Products */,
 				14BA3A36F8301E5A0B8FDAE8 /* Pods */,
@@ -108,6 +138,7 @@
 			children = (
 				770D2A0C1E96DE15003BD3B2 /* Data */,
 				770D2A0B1E96DE0F003BD3B2 /* Services */,
+				225C7FC81EB04ED600EF8C31 /* GBModel.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -115,9 +146,12 @@
 		770D2A051E96D801003BD3B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				770D2A1A1E981D26003BD3B2 /* SpeechBubbleView.swift */,
-				770D2A1C1E9833B5003BD3B2 /* GBActivityIndicator.swift */,
-				770D2A1F1E9BF7D0003BD3B2 /* GBActivityIndicator.xib */,
+				225C7FF41EB073FE00EF8C31 /* GBDogView.xib */,
+				225C7FF01EB073D500EF8C31 /* GBDogView.swift */,
+				225C7FE41EB06A2300EF8C31 /* GBActivityIndicator.swift */,
+				225C7FE51EB06A2300EF8C31 /* GBActivityIndicator.xib */,
+				225C7FE61EB06A2300EF8C31 /* SpeechBubbleView.swift */,
+				225C7FCF1EB0694E00EF8C31 /* cells */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -125,8 +159,9 @@
 		770D2A061E96D806003BD3B2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				770D2A071E96DB28003BD3B2 /* DogViewController.swift */,
-				770D2A091E96DB42003BD3B2 /* FavoriteDogsViewController.swift */,
+				225C7FD01EB069A700EF8C31 /* DogViewController.swift */,
+				225C7FD11EB069A700EF8C31 /* FavoriteDogsViewController.swift */,
+				225C7FF61EB07CAD00EF8C31 /* DogHeroViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -134,9 +169,11 @@
 		770D2A0B1E96DE0F003BD3B2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				770D2A0F1E96DFB4003BD3B2 /* ImageService.swift */,
-				770D2A121E96FE4B003BD3B2 /* DogService.swift */,
-				770D2A161E980683003BD3B2 /* SearchService.swift */,
+				225C7FDA1EB06A1300EF8C31 /* CoreDataManager.swift */,
+				225C7FDB1EB06A1300EF8C31 /* DogService.swift */,
+				225C7FDC1EB06A1300EF8C31 /* FavoriteService.swift */,
+				225C7FDD1EB06A1300EF8C31 /* ImageService.swift */,
+				225C7FDE1EB06A1300EF8C31 /* SearchService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -144,8 +181,9 @@
 		770D2A0C1E96DE15003BD3B2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				770D2A0D1E96DE35003BD3B2 /* Dog.swift */,
-				770D2A141E98024E003BD3B2 /* SearchResult.swift */,
+				225C7FD41EB06A0400EF8C31 /* AppConstants.swift */,
+				225C7FD51EB06A0400EF8C31 /* Dog.swift */,
+				225C7FD61EB06A0400EF8C31 /* SearchResult.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -229,11 +267,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225C7FF51EB073FE00EF8C31 /* GBDogView.xib in Resources */,
 				770D29FD1E96D6D0003BD3B2 /* LaunchScreen.storyboard in Resources */,
 				770D2A251E9C0E64003BD3B2 /* breeds.json in Resources */,
+				225C7FE81EB06A2300EF8C31 /* GBActivityIndicator.xib in Resources */,
 				770D29FA1E96D6D0003BD3B2 /* Assets.xcassets in Resources */,
+				225C7FF91EB0866900EF8C31 /* Default-568h@2x.png in Resources */,
 				770D29F81E96D6D0003BD3B2 /* Main.storyboard in Resources */,
-				770D2A201E9BF7D0003BD3B2 /* GBActivityIndicator.xib in Resources */,
+				225C7FED1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,16 +333,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				770D2A0A1E96DB42003BD3B2 /* FavoriteDogsViewController.swift in Sources */,
-				770D2A1B1E981D26003BD3B2 /* SpeechBubbleView.swift in Sources */,
-				770D2A151E98024E003BD3B2 /* SearchResult.swift in Sources */,
-				770D2A1D1E9833B5003BD3B2 /* GBActivityIndicator.swift in Sources */,
 				770D29F31E96D6D0003BD3B2 /* AppDelegate.swift in Sources */,
-				770D2A131E96FE4B003BD3B2 /* DogService.swift in Sources */,
-				770D2A0E1E96DE35003BD3B2 /* Dog.swift in Sources */,
-				770D2A171E980683003BD3B2 /* SearchService.swift in Sources */,
-				770D2A101E96DFB4003BD3B2 /* ImageService.swift in Sources */,
-				770D2A081E96DB28003BD3B2 /* DogViewController.swift in Sources */,
+				225C7FD91EB06A0400EF8C31 /* SearchResult.swift in Sources */,
+				225C7FCA1EB04ED600EF8C31 /* GBModel.xcdatamodeld in Sources */,
+				225C7FD81EB06A0400EF8C31 /* Dog.swift in Sources */,
+				225C7FD21EB069A700EF8C31 /* DogViewController.swift in Sources */,
+				225C7FD31EB069A700EF8C31 /* FavoriteDogsViewController.swift in Sources */,
+				225C7FF11EB073D500EF8C31 /* GBDogView.swift in Sources */,
+				225C7FEC1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.swift in Sources */,
+				225C7FDF1EB06A1300EF8C31 /* CoreDataManager.swift in Sources */,
+				225C7FD71EB06A0400EF8C31 /* AppConstants.swift in Sources */,
+				225C7FE21EB06A1300EF8C31 /* ImageService.swift in Sources */,
+				225C7FE71EB06A2300EF8C31 /* GBActivityIndicator.swift in Sources */,
+				225C7FE91EB06A2300EF8C31 /* SpeechBubbleView.swift in Sources */,
+				225C7FE31EB06A1300EF8C31 /* SearchService.swift in Sources */,
+				225C7FE01EB06A1300EF8C31 /* DogService.swift in Sources */,
+				225C7FF71EB07CAD00EF8C31 /* DogHeroViewController.swift in Sources */,
+				225C7FE11EB06A1300EF8C31 /* FavoriteService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +475,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CLY266LCNG;
 				INFOPLIST_FILE = GoodBoye/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmn.GoodBoye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -442,7 +490,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CLY266LCNG;
 				INFOPLIST_FILE = GoodBoye/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmn.GoodBoye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -472,6 +520,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		225C7FC81EB04ED600EF8C31 /* GBModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				225C7FC91EB04ED600EF8C31 /* GBModel.xcdatamodel */,
+			);
+			currentVersion = 225C7FC91EB04ED600EF8C31 /* GBModel.xcdatamodel */;
+			path = GBModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 770D29E71E96D6D0003BD3B2 /* Project object */;
 }

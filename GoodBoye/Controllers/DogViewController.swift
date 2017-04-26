@@ -10,14 +10,15 @@ import UIKit
 
 class DogViewController: UIViewController {
     
-    @IBOutlet weak var activityIndicatorContainer: UIView!
-    @IBOutlet weak var dogImageView: UIImageView!
-    @IBOutlet weak var findDogsButton: UIButton!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var speechBubble: SpeechBubbleView!
+    @IBOutlet fileprivate weak var dogViewContainer: UIView!
+    @IBOutlet fileprivate weak var activityIndicatorContainer: UIView!
+    @IBOutlet fileprivate weak var findDogsButton: UIButton!
+    @IBOutlet fileprivate weak var statusLabel: UILabel!
+    @IBOutlet fileprivate weak var speechBubble: SpeechBubbleView!
+    
     private var barkTimer: Timer?
     private var activityIndicator: GBActivityIndicator?
-    
+    private var dogView: GBDogView?
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -33,6 +34,20 @@ class DogViewController: UIViewController {
             activityIndicator = Bundle.main.loadNibNamed("GBActivityIndicator", owner: activityIndicator, options: nil)?.first as? GBActivityIndicator
             activityIndicator?.frame = frame
             activityIndicatorContainer.addSubview(activityIndicator!)
+        }
+        
+        if dogView == nil {
+            let frame = CGRect(
+                x: 0,
+                y: 0,
+                width: dogViewContainer.frame.width,
+                height: dogViewContainer.frame.height
+            )
+            
+            dogView = Bundle.main.loadNibNamed("GBDogView", owner: dogView, options: nil)?.first as? GBDogView
+            dogView?.frame = frame
+            dogView?.delegate = self
+            dogViewContainer.addSubview(dogView!)
         }
     }
     
@@ -53,10 +68,11 @@ class DogViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        barkTimer?.invalidate()
-        barkTimer = nil
-        
-        barkTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(barkDog), userInfo: nil, repeats: true)
+        FavoriteService.shared.getFavoriteDogs().then { dogs -> Void in
+            print("favorite dogs: \(dogs.count)")
+        }.catch { error in
+            print("error in favorite service!! \(error.localizedDescription)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,37 +86,26 @@ class DogViewController: UIViewController {
         //once fetching is complete
         statusLabel.isHidden = true
         showLoadingIndicator()
-        
+        findDogsButton.isEnabled = false
         
         DogService.getRandomDog().then { dog -> Void in
             self.statusLabel.isHidden = true
-            self.dogImageView.image = dog.image
+            print("dog id: \(dog.dogImage?.imageId ?? "")")
+            self.dogView?.dog = dog
         }.catch { error in
             //display error
-            self.dogImageView.image = nil
+            self.dogView?.dog = nil
             self.statusLabel.text = "Oops! Had trouble finding a dog. Please try again."
             self.statusLabel.isHidden = false
         }.always {
             self.hideLoadingIndicator()
-        }
-    }
-    
-    @objc func barkDog() {
-        let dogTransform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        DispatchQueue.main.async {
-            self.speechBubble.show(text: "Woof!")
-            UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: [.beginFromCurrentState, .allowUserInteraction], animations: {
-                self.findDogsButton.transform = dogTransform
-            }, completion: {success in
-                UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1.0, options: [.beginFromCurrentState, .allowUserInteraction], animations: {
-                    self.findDogsButton.transform = CGAffineTransform.identity
-                })
-            })
+            self.findDogsButton.isEnabled = true
         }
     }
     
     private func showLoadingIndicator() {
         if let activityIndicator = activityIndicator {
+            activityIndicatorContainer.isHidden = false
             activityIndicator.showLoadingIndicator()
         }
     }
@@ -108,23 +113,13 @@ class DogViewController: UIViewController {
     private func hideLoadingIndicator() {
         if let activityIndicator = activityIndicator {
             activityIndicator.hideLoadingIndicator()
+            activityIndicatorContainer.isHidden = true
         }
     }
-    
-    @IBAction func shareButtonPushed(_ sender: Any) {
-        shareImage()
-    }
-    
-    @IBAction func favoriteButtonPushed(_ sender: Any) {
-        //TODO
-    }
-    
-    private func shareImage() {
-        // image to share
-        guard let image = dogImageView.image else {
-            return
-        }
-        
+}
+
+extension UIViewController: DogViewDelegate {
+    func shouldShare(image: UIImage) {
         // set up activity view controller
         let imageToShare = [image]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)

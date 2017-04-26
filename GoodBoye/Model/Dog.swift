@@ -9,13 +9,20 @@
 import UIKit
 import PromiseKit
 
-struct Dog {
-    var breed: String
+struct DogImage {
     var image: UIImage?
+    var imageId: String
+    var imageURL: String
+}
+
+struct GBDog {
+    var breed: String
+    var dogImage: DogImage?
+    var imageURL: String
     static let isLoveBug = true
 }
 
-extension Dog {
+extension GBDog {
     static func DogBreeds() -> Promise<[String]> {
         return Promise { fulfill, reject in
             let path = Bundle.main.path(forResource: "breeds", ofType: "json")
@@ -32,5 +39,13 @@ extension Dog {
             let error = NSError(domain: "com.goodBoye.error", code: 700, userInfo: nil)
             reject(error)
         }
+    }
+    
+    func addToFavorites() {
+        FavoriteService.shared.save(favorite: self)
+    }
+    
+    func removeFromFavorites() {
+        FavoriteService.shared.remove(favorite: self)
     }
 }

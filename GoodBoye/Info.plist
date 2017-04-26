@@ -45,5 +45,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Allow GoodBoye to access your photos in order to save dog pics</string>
 </dict>
 </plist>

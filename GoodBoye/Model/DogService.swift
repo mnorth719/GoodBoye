@@ -18,10 +18,10 @@ struct DogService {
         return nil
     }
     
-    static func getRandomDog() -> Promise<Dog> {
+    static func getRandomDog() -> Promise<GBDog> {
         return Promise { fulfill, reject in
             var randomBreed: String = "Husky"
-            Dog.DogBreeds().then { (breeds: [String]) -> Promise<SearchResult> in
+            GBDog.DogBreeds().then {(breeds: [String]) -> Promise<SearchResult> in
                 if let breed = DogService.randomBreed(fromBreeds: breeds) {
                     randomBreed = breed
                 }
@@ -36,9 +36,9 @@ struct DogService {
                 }
                 
                 return SearchService.search(withUrl: searchURL)
-            }.then { searchResult -> Promise<UIImage> in
-                if let url = ImageService.randomImageURL(from: searchResult) {
-                    return ImageService.getImage(withUrl: url)
+            }.then { searchResult -> Promise<DogImage> in
+                if let value = ImageService.randomValue(from: searchResult), let url = URL(string: value.contentUrl) {
+                    return ImageService.getImage(withUrl: url, imageId: value.imageId)
                 } else {
                     let error = NSError(
                         domain: ImageService.Constants.errorDomain,
@@ -48,7 +48,7 @@ struct DogService {
                     throw error
                 }
             }.then { image in
-                fulfill(Dog(breed: randomBreed, image: image))
+                fulfill(GBDog(breed: randomBreed, dogImage: image, imageURL: image.imageURL))
             }.catch { error in
                 reject(error)
             }
