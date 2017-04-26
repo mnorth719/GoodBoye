@@ -12,15 +12,17 @@ import PromiseKit
 struct DogImage {
     var image: UIImage
     var imageId: String
+    var imageURL: String
 }
 
-struct Dog {
+struct GBDog {
     var breed: String
     var dogImage: DogImage?
+    var imageURL: String
     static let isLoveBug = true
 }
 
-extension Dog {
+extension GBDog {
     static func DogBreeds() -> Promise<[String]> {
         return Promise { fulfill, reject in
             let path = Bundle.main.path(forResource: "breeds", ofType: "json")
@@ -40,10 +42,10 @@ extension Dog {
     }
     
     func addToFavorites() {
-        FavoriteService.shared.save(favorite: self)
+//        FavoriteService.shared.save(favorite: self)
     }
     
     func removeFromFavorites() {
-        FavoriteService.shared.remove(favorite: self)
+//        FavoriteService.shared.remove(favorite: self)
     }
 }

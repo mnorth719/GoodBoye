@@ -9,18 +9,18 @@
 import UIKit
 
 class FavoriteDogsViewController: UIViewController {
-    fileprivate var favoriteDogs = [Dog]()
+    fileprivate var favoriteDogs = [GBDog]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         FavoriteService.shared.getFavoriteDogs().then { dogs in
             DispatchQueue.main.async {
                 self.favoriteDogs.removeAll()
-                self.favoriteDogs.append(dogs)
-                //reload colleciton
+                self.favoriteDogs.append(contentsOf: dogs)
+                
             }
         }.always {
-                
+            //hide loading
         }
      }
 

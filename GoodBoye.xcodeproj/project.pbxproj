@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225C7FCA1EB04ED600EF8C31 /* GBModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FC81EB04ED600EF8C31 /* GBModel.xcdatamodeld */; };
+		225C7FCC1EB0592300EF8C31 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FCB1EB0592300EF8C31 /* CoreDataManager.swift */; };
+		225C7FCE1EB0632B00EF8C31 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FCD1EB0632B00EF8C31 /* AppConstants.swift */; };
 		770D29F31E96D6D0003BD3B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D29F21E96D6D0003BD3B2 /* AppDelegate.swift */; };
 		770D29F81E96D6D0003BD3B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 770D29F61E96D6D0003BD3B2 /* Main.storyboard */; };
 		770D29FA1E96D6D0003BD3B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 770D29F91E96D6D0003BD3B2 /* Assets.xcassets */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		225C7FC91EB04ED600EF8C31 /* GBModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GBModel.xcdatamodel; sourceTree = "<group>"; };
+		225C7FCB1EB0592300EF8C31 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		225C7FCD1EB0632B00EF8C31 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		770D29EF1E96D6D0003BD3B2 /* GoodBoye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodBoye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		770D29F21E96D6D0003BD3B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		770D29F71E96D6D0003BD3B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 			children = (
 				770D2A0C1E96DE15003BD3B2 /* Data */,
 				770D2A0B1E96DE0F003BD3B2 /* Services */,
+				225C7FC81EB04ED600EF8C31 /* GBModel.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -140,6 +147,7 @@
 				770D2A121E96FE4B003BD3B2 /* DogService.swift */,
 				770D2A161E980683003BD3B2 /* SearchService.swift */,
 				7751744E1E9C951D006CE4AD /* FavoriteService.swift */,
+				225C7FCB1EB0592300EF8C31 /* CoreDataManager.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 			children = (
 				770D2A0D1E96DE35003BD3B2 /* Dog.swift */,
 				770D2A141E98024E003BD3B2 /* SearchResult.swift */,
+				225C7FCD1EB0632B00EF8C31 /* AppConstants.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -301,9 +310,12 @@
 				7751744F1E9C951D006CE4AD /* FavoriteService.swift in Sources */,
 				770D2A1D1E9833B5003BD3B2 /* GBActivityIndicator.swift in Sources */,
 				770D29F31E96D6D0003BD3B2 /* AppDelegate.swift in Sources */,
+				225C7FCA1EB04ED600EF8C31 /* GBModel.xcdatamodeld in Sources */,
+				225C7FCC1EB0592300EF8C31 /* CoreDataManager.swift in Sources */,
 				770D2A131E96FE4B003BD3B2 /* DogService.swift in Sources */,
 				770D2A0E1E96DE35003BD3B2 /* Dog.swift in Sources */,
 				770D2A171E980683003BD3B2 /* SearchService.swift in Sources */,
+				225C7FCE1EB0632B00EF8C31 /* AppConstants.swift in Sources */,
 				770D2A101E96DFB4003BD3B2 /* ImageService.swift in Sources */,
 				770D2A081E96DB28003BD3B2 /* DogViewController.swift in Sources */,
 			);
@@ -431,7 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CLY266LCNG;
 				INFOPLIST_FILE = GoodBoye/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmn.GoodBoye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,7 +458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CLY266LCNG;
 				INFOPLIST_FILE = GoodBoye/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mmn.GoodBoye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -476,6 +488,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		225C7FC81EB04ED600EF8C31 /* GBModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				225C7FC91EB04ED600EF8C31 /* GBModel.xcdatamodel */,
+			);
+			currentVersion = 225C7FC91EB04ED600EF8C31 /* GBModel.xcdatamodel */;
+			path = GBModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 770D29E71E96D6D0003BD3B2 /* Project object */;
 }

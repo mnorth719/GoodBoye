@@ -18,6 +18,7 @@ enum ImageServiceErrorType: Int {
     case InvalidURL = 602
 }
 
+
 struct ImageService {
     
     enum Constants {
@@ -31,7 +32,7 @@ struct ImageService {
                 switch response.result {
                 case .success(let data):
                     if let image = UIImage(data: data) {
-                        let dogImage = DogImage(image: image, imageId: imageId)
+                        let dogImage = DogImage(image: image, imageId: imageId, imageURL: withUrl.absoluteString)
                         fulfill(dogImage)
                     }else {
                         let error = NSError(

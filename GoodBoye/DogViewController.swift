@@ -20,7 +20,7 @@ class DogViewController: UIViewController {
     
     private var barkTimer: Timer?
     private var activityIndicator: GBActivityIndicator?
-    private var currentDog: Dog?
+    private var currentDog: GBDog?
     
     
     override func viewDidLayoutSubviews() {
@@ -62,6 +62,12 @@ class DogViewController: UIViewController {
         barkTimer = nil
         
         barkTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(barkDog), userInfo: nil, repeats: true)
+        
+        FavoriteService.shared.getFavoriteDogs().then { dogs -> Void in
+            print("favorite dogs: \(dogs.count)")
+        }.catch { error in
+            print("error in favorite service!! \(error.localizedDescription)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,7 +85,7 @@ class DogViewController: UIViewController {
         
         DogService.getRandomDog().then { dog -> Void in
             self.statusLabel.isHidden = true
-            print("dog id: \(dog.dogImage?.imageId)")
+            print("dog id: \(dog.dogImage?.imageId ?? "")")
             self.dogImageView.image = dog.dogImage?.image
             self.currentDog = dog
             self.updateFavoriteButon()
@@ -114,10 +120,17 @@ class DogViewController: UIViewController {
         guard let dog = currentDog else {
             return
         }
-
-        if FavoriteService.shared.isFavorite(dog: dog) {
-            self.favoriteButton.setImage(UIImage(named: "heartSelected"), for: .normal)
-        } else {
+        
+        FavoriteService.shared.isFavorite(dog: dog).then { isFavorite -> Void in
+            DispatchQueue.main.async {
+                if isFavorite {
+                    self.favoriteButton.setImage(UIImage(named: "heartSelected"), for: .normal)
+                } else {
+                    self.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
+                }
+            }
+        }.catch { error in
+            print("error in favorite service!! \(error.localizedDescription)")
             self.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
         }
     }
@@ -141,13 +154,17 @@ class DogViewController: UIViewController {
             return
         }
         
-        if FavoriteService.shared.isFavorite(dog: dog) {
-            FavoriteService.shared.remove(favorite: dog)
-        } else {
-            FavoriteService.shared.save(favorite: dog)
+        FavoriteService.shared.isFavorite(dog: dog).then { isFavorite -> Void in
+            if isFavorite {
+                FavoriteService.shared.remove(favorite: dog)
+                self.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
+            } else {
+                FavoriteService.shared.save(favorite: dog)
+                self.favoriteButton.setImage(UIImage(named: "heartSelected"), for: .normal)
+            }
+        }.catch { error in
+            print("error in favorite service!! \(error.localizedDescription)")
         }
-        
-        self.updateFavoriteButon()
     }
     
     @IBAction func shareButtonPushed(_ sender: Any) {

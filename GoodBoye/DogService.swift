@@ -18,10 +18,10 @@ struct DogService {
         return nil
     }
     
-    static func getRandomDog() -> Promise<Dog> {
+    static func getRandomDog() -> Promise<GBDog> {
         return Promise { fulfill, reject in
             var randomBreed: String = "Husky"
-            Dog.DogBreeds().then {(breeds: [String]) -> Promise<SearchResult> in
+            GBDog.DogBreeds().then {(breeds: [String]) -> Promise<SearchResult> in
                 if let breed = DogService.randomBreed(fromBreeds: breeds) {
                     randomBreed = breed
                 }
@@ -48,7 +48,7 @@ struct DogService {
                     throw error
                 }
             }.then { image in
-                fulfill(Dog(breed: randomBreed, dogImage: image))
+                fulfill(GBDog(breed: randomBreed, dogImage: image, imageURL: image.imageURL))
             }.catch { error in
                 reject(error)
             }
