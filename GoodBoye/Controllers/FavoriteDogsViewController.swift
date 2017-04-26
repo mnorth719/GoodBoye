@@ -16,6 +16,7 @@ class FavoriteDogsViewController: UIViewController {
     
     enum Constants {
         static let dogHeroSegueId = "DogHeroSegue"
+        static let cellSpacing: CGFloat = 2
     }
 
     override func viewDidLoad() {
@@ -56,7 +57,7 @@ class FavoriteDogsViewController: UIViewController {
     }
 }
 
-extension FavoriteDogsViewController: UICollectionViewDelegate {
+extension FavoriteDogsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -66,6 +67,16 @@ extension FavoriteDogsViewController: UICollectionViewDelegate {
             controller.dog = favoriteDogs[indexPath.item]
             self.navigationController?.pushViewController(controller, animated: true)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let totalScreenWidth = UIScreen.main.bounds.width
+        let cellsPerRow = 3
+        let totalSpacing = (CGFloat(cellsPerRow) + 1) * Constants.cellSpacing
+        let usableSpace = totalScreenWidth - totalSpacing
+        let cellWidth = usableSpace / 3.0
+        let cellHeight = cellWidth * 1.25
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 }
 

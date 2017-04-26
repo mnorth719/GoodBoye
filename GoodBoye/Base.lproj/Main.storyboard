@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="x0g-de-VXi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="x0g-de-VXi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,9 +25,8 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="510"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EAl-Ru-9e6" userLabel="activityIndicatorContainer">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAl-Ru-9e6" userLabel="activityIndicatorContainer">
                                 <rect key="frame" x="0.0" y="64" width="375" height="510"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Find Some Dogs!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Kal-NA-khW">
@@ -90,7 +89,11 @@
                             <constraint firstAttribute="trailing" secondItem="HcT-8j-SCv" secondAttribute="trailing" id="cFG-2B-I0s"/>
                             <constraint firstItem="dGr-aw-fFu" firstAttribute="centerY" secondItem="CQg-Lt-cjb" secondAttribute="centerY" constant="52.5" id="ffK-sw-59H"/>
                             <constraint firstItem="CQg-Lt-cjb" firstAttribute="leading" secondItem="dGr-aw-fFu" secondAttribute="trailing" constant="-12" id="h9K-xu-eMx"/>
+                            <constraint firstItem="EAl-Ru-9e6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="hXj-UP-Cd0"/>
+                            <constraint firstItem="EAl-Ru-9e6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nHY-LK-WVX"/>
+                            <constraint firstItem="EAl-Ru-9e6" firstAttribute="width" secondItem="HcT-8j-SCv" secondAttribute="width" id="otm-gA-rA8"/>
                             <constraint firstItem="HcT-8j-SCv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="yDb-my-yBs"/>
+                            <constraint firstItem="EAl-Ru-9e6" firstAttribute="height" secondItem="HcT-8j-SCv" secondAttribute="height" id="zuG-5M-3Bg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Good Boye!" id="yJu-cP-Xi8">
