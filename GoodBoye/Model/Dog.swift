@@ -42,10 +42,10 @@ extension GBDog {
     }
     
     func addToFavorites() {
-//        FavoriteService.shared.save(favorite: self)
+        FavoriteService.shared.save(favorite: self)
     }
     
     func removeFromFavorites() {
-//        FavoriteService.shared.remove(favorite: self)
+        FavoriteService.shared.remove(favorite: self)
     }
 }

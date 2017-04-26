@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="x0g-de-VXi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="x0g-de-VXi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="741.60000000000002" y="117.39130434782609"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite Dogs View Controller-->
         <scene sceneID="HRp-G5-hyC">
             <objects>
-                <viewController id="Gss-jm-E8l" sceneMemberID="viewController">
+                <viewController id="Gss-jm-E8l" customClass="FavoriteDogsViewController" customModule="GoodBoye" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="flG-ly-W1b"/>
                         <viewControllerLayoutGuide type="bottom" id="jLq-zZ-z33"/>
@@ -206,6 +206,9 @@
                             <constraint firstAttribute="trailing" secondItem="dIX-sR-CdT" secondAttribute="trailing" id="pnG-RK-mWb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="dIX-sR-CdT" id="Oax-mt-ZUH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahK-k0-8oN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

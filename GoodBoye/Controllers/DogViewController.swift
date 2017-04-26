@@ -156,10 +156,10 @@ class DogViewController: UIViewController {
         
         FavoriteService.shared.isFavorite(dog: dog).then { isFavorite -> Void in
             if isFavorite {
-                FavoriteService.shared.remove(favorite: dog)
+                dog.removeFromFavorites()
                 self.favoriteButton.setImage(UIImage(named: "favorite"), for: .normal)
             } else {
-                FavoriteService.shared.save(favorite: dog)
+                dog.addToFavorites()
                 self.favoriteButton.setImage(UIImage(named: "heartSelected"), for: .normal)
             }
         }.catch { error in
