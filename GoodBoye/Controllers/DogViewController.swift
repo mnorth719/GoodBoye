@@ -121,8 +121,9 @@ class DogViewController: UIViewController {
 extension UIViewController: DogViewDelegate {
     func shouldShare(image: UIImage) {
         // set up activity view controller
-        let imageToShare = [image]
-        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        let sharedMessage = "Woof! Sent from GoodBoye App."
+        let imageToShare = image
+        let activityViewController = UIActivityViewController(activityItems: [imageToShare, sharedMessage], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
         // present the view controller
