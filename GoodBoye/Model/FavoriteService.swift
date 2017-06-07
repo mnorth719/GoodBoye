@@ -96,7 +96,7 @@ class FavoriteService {
 
 extension GBDog: Hashable {
     var hashValue: Int {
-        return dogImage?.imageId.hash ?? 0
+        return dogImage?.imageId?.hash ?? 0
     }
     
     func isEqual(lhs: GBDog, rhs: GBDog) -> Bool {

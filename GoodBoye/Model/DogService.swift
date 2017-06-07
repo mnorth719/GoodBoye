@@ -37,7 +37,7 @@ struct DogService {
                 
                 return SearchService.search(withUrl: searchURL)
             }.then { searchResult -> Promise<DogImage> in
-                if let value = ImageService.randomValue(from: searchResult), let url = URL(string: value.contentUrl) {
+                if let value = ImageService.randomValue(from: searchResult), let url = URL(string: value.contentUrl ?? "") {
                     return ImageService.getImage(withUrl: url, imageId: value.imageId)
                 } else {
                     let error = NSError(

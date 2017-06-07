@@ -17,15 +17,16 @@ struct SearchService {
     }
     
     static func search(withUrl: URL) -> Promise<SearchResult> {
+        
         return Promise { fulfill, reject in
             let tokenDict = [Constants.apiDictKey : Constants.apiToken]
-            request(withUrl, parameters: nil, headers: tokenDict).validate().responseJSON { response in
+            request(withUrl, parameters: nil, headers: tokenDict).validate().responseData { response in
                 switch response.result {
-                case .success(let json):
-                    if let json = json as? [String : Any] {
-                        let resultObj = SearchResult(fromDictionary: json)
-                        fulfill(resultObj)
-                    }else {
+                case .success(let data):
+                    let searchResult = try? JSONDecoder().decode(SearchResult.self, from: data)
+                    if let searchResult = searchResult {
+                        fulfill(searchResult)
+                    } else {
                         let error = NSError(
                             domain: Constants.errorDomain,
                             code: ImageServiceErrorType.InvalidResponse.rawValue,

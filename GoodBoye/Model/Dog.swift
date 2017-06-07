@@ -11,7 +11,7 @@ import PromiseKit
 
 struct DogImage {
     var image: UIImage?
-    var imageId: String
+    var imageId: String?
     var imageURL: String
 }
 

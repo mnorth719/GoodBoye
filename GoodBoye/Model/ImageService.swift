@@ -26,7 +26,7 @@ struct ImageService {
         static let errorDomain = "com.mmn.WebServices"
     }
     
-    static func getImage(withUrl: URL, imageId: String) -> Promise<DogImage> {
+    static func getImage(withUrl: URL, imageId: String?) -> Promise<DogImage> {
         return Promise { fulfill, reject in
             request(withUrl).validate().responseData { response in
                 switch response.result {
@@ -51,7 +51,11 @@ struct ImageService {
     }
     
     static func randomValue(from: SearchResult) -> Value? {
-        let randIndx = Int(arc4random_uniform(UInt32(from.value.count)))
-        return from.value[randIndx]
+        guard let values = from.value else {
+            return nil
+        }
+        
+        let randIndx = Int(arc4random_uniform(UInt32(values.count)))
+        return values[randIndx]
     }
 }

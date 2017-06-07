@@ -27,9 +27,14 @@ class FavoriteDogsViewController: UIViewController {
         collectionView.register(
             UINib(nibName: FavoriteDogCollectionViewCell.Constants.nibName, bundle: nil),
             forCellWithReuseIdentifier: FavoriteDogCollectionViewCell.Constants.reuseId
-        )
-        
-        collectionView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+        )        
+    }
+    
+    override func viewSafeAreaInsetsDidChange() {
+        if #available(iOS 11.0, *) {
+//            let currentYOffset = self.collectionView.contentOffset.y
+//            self.collectionView.contentOffset = CGSize(width: 0, height: max(newTopY, currentYOffset))
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
