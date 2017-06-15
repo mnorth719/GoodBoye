@@ -41,6 +41,7 @@ class DogHeroViewController: UIViewController {
             dogView?.delegate = self
             dogView?.dog = dog
             dogViewContainer.addSubview(dogView!)
+            self.navigationItem.title = dog?.breed
         }
     }
 }

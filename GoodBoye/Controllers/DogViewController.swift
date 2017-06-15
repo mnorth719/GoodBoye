@@ -20,10 +20,19 @@ class DogViewController: UIViewController {
     private var activityIndicator: GBActivityIndicator?
     private var dogView: GBDogView?
     
+    
+    override func viewSafeAreaInsetsDidChange() {
+        
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         if activityIndicator == nil {
+            if #available(iOS 11.0, *) {
+                self.navigationItem.largeTitleDisplayMode = .always
+            }
+            
             let frame = CGRect(
                 x: 0,
                 y: 0,

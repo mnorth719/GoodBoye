@@ -15,23 +15,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="431"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymt-3E-PyF">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iqs-bo-C3K">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
-                            <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </imageView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="Iqs-bo-C3K" firstAttribute="top" secondItem="Ymt-3E-PyF" secondAttribute="top" id="IU5-jk-Xhr"/>
-                        <constraint firstAttribute="trailing" secondItem="Iqs-bo-C3K" secondAttribute="trailing" id="IuK-f5-L6J"/>
-                        <constraint firstAttribute="bottom" secondItem="Iqs-bo-C3K" secondAttribute="bottom" id="Qko-LD-qDR"/>
-                        <constraint firstItem="Iqs-bo-C3K" firstAttribute="leading" secondItem="Ymt-3E-PyF" secondAttribute="leading" id="SEg-Xw-42p"/>
-                        <constraint firstItem="Iqs-bo-C3K" firstAttribute="centerY" secondItem="Ymt-3E-PyF" secondAttribute="centerY" id="xV3-Ac-AT2"/>
-                        <constraint firstAttribute="centerX" secondItem="Iqs-bo-C3K" secondAttribute="centerX" id="zhb-5u-Nh7"/>
-                    </constraints>
-                </scrollView>
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dG7-gM-j6s" userLabel="options view">
                     <rect key="frame" x="0.0" y="367" width="375" height="64"/>
                     <subviews>
@@ -67,16 +50,20 @@
                         <constraint firstItem="kBB-Ez-2fo" firstAttribute="top" secondItem="dG7-gM-j6s" secondAttribute="top" constant="8" id="yDr-26-mix"/>
                     </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iqs-bo-C3K">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Ymt-3E-PyF" secondAttribute="bottom" constant="64" id="9Ze-T4-srV"/>
-                <constraint firstItem="Ymt-3E-PyF" firstAttribute="top" secondItem="UBi-fc-zzy" secondAttribute="top" id="SUa-Lu-N8t"/>
+                <constraint firstItem="Iqs-bo-C3K" firstAttribute="leading" secondItem="UBi-fc-zzy" secondAttribute="leading" id="5Ka-Fe-3pC"/>
+                <constraint firstItem="Iqs-bo-C3K" firstAttribute="top" secondItem="UBi-fc-zzy" secondAttribute="top" id="MgI-6D-CK6"/>
+                <constraint firstAttribute="bottom" secondItem="Iqs-bo-C3K" secondAttribute="bottom" constant="64" id="SHg-HW-FOt"/>
                 <constraint firstAttribute="trailing" secondItem="dG7-gM-j6s" secondAttribute="trailing" id="beg-PZ-66q"/>
                 <constraint firstItem="dG7-gM-j6s" firstAttribute="leading" secondItem="UBi-fc-zzy" secondAttribute="leading" id="bgC-Sx-N0P"/>
-                <constraint firstItem="Ymt-3E-PyF" firstAttribute="leading" secondItem="UBi-fc-zzy" secondAttribute="leading" id="lbF-ll-3mI"/>
+                <constraint firstAttribute="trailing" secondItem="Iqs-bo-C3K" secondAttribute="trailing" id="lyx-xE-EhA"/>
                 <constraint firstAttribute="bottom" secondItem="dG7-gM-j6s" secondAttribute="bottom" id="pcw-4N-r2J"/>
-                <constraint firstAttribute="trailing" secondItem="Ymt-3E-PyF" secondAttribute="trailing" id="rJd-1y-bkY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
