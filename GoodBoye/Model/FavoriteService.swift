@@ -94,8 +94,8 @@ class FavoriteService {
     }
 }
 
-extension GBDog: Hashable {
-    var hashValue: Int {
+extension GBDog {
+    override var hashValue: Int {
         return dogImage?.imageId?.hash ?? 0
     }
     

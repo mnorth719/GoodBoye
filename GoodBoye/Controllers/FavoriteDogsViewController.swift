@@ -12,12 +12,16 @@ class FavoriteDogsViewController: UIViewController {
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
     @IBOutlet weak var blankStateLabel: UILabel!
     
+    fileprivate var dogObserver: NSKeyValueObservation?
     fileprivate var favoriteDogs = [GBDog]()
+    fileprivate var observations = [NSKeyValueObservation]()
     
     enum Constants {
         static let dogHeroSegueId = "DogHeroSegue"
         static let cellSpacing: CGFloat = 2
     }
+    
+    private var viewModel: FavoriteDogsViewModel? = FavoriteDogsViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,29 +31,23 @@ class FavoriteDogsViewController: UIViewController {
         collectionView.register(
             UINib(nibName: FavoriteDogCollectionViewCell.Constants.nibName, bundle: nil),
             forCellWithReuseIdentifier: FavoriteDogCollectionViewCell.Constants.reuseId
-        )        
-    }
-    
-    override func viewSafeAreaInsetsDidChange() {
-        if #available(iOS 11.0, *) {
-//            let currentYOffset = self.collectionView.contentOffset.y
-//            self.collectionView.contentOffset = CGSize(width: 0, height: max(newTopY, currentYOffset))
+        )
+        
+        if let viewModel = viewModel {
+            let observation = viewModel.observe(\.favoriteDogs){[weak self] observed, change in
+                DispatchQueue.main.async {
+                    self?.favoriteDogs = observed.favoriteDogs
+                    self?.collectionView.reloadData()
+                }
+            }
+            
+            observations.append(observation)
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        FavoriteService.shared.getFavoriteDogs().then { dogs in
-            DispatchQueue.main.async {
-                self.favoriteDogs.removeAll()
-                self.favoriteDogs.append(contentsOf: dogs)
-                self.collectionView.reloadData()
-                self.blankStateLabel.isHidden = self.favoriteDogs.count > 0
-            }
-        }.always {
-            //hide loading
-        }
+        self.viewModel?.updateDogs()
     }
 
     override func didReceiveMemoryWarning() {

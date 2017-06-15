@@ -9,17 +9,30 @@
 import UIKit
 import PromiseKit
 
-struct DogImage {
+class DogImage: NSObject {
     var image: UIImage?
     var imageId: String?
     var imageURL: String
+    
+    init(image: UIImage?, imageId: String?, imageURL: String) {
+        self.image = image
+        self.imageId = imageId
+        self.imageURL = imageURL
+    }
 }
 
-struct GBDog {
-    var breed: String
+class GBDog: NSObject {
+    var breed: String?
     var dogImage: DogImage?
     var imageURL: String
     static let isLoveBug = true
+    
+    init(breed: String, dogImage: DogImage, imageURL: String) {
+        self.imageURL = imageURL
+        self.breed = breed
+        self.dogImage = dogImage
+    }
+        
 }
 
 extension GBDog {

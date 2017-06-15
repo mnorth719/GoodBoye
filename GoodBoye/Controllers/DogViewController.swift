@@ -18,12 +18,7 @@ class DogViewController: UIViewController {
     
     private var barkTimer: Timer?
     private var activityIndicator: GBActivityIndicator?
-    private var dogView: GBDogView?
-    
-    
-    override func viewSafeAreaInsetsDidChange() {
-        
-    }
+    private var dogView: GBDogView?   
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -77,11 +72,6 @@ class DogViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        FavoriteService.shared.getFavoriteDogs().then { dogs -> Void in
-            print("favorite dogs: \(dogs.count)")
-        }.catch { error in
-            print("error in favorite service!! \(error.localizedDescription)")
-        }
     }
 
     override func didReceiveMemoryWarning() {

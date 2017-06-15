@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SearchResult: Codable {
+struct SearchResult: Codable {
     var type : String?
     var displayRecipeSourcesBadges : Bool?
     var displayShoppingSourcesBadges : Bool?
