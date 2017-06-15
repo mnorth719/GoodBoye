@@ -7,5 +7,6 @@ target 'GoodBoye' do
   swift_version = "3.0"
   pod "PromiseKit", "~> 4.0"
   pod 'Alamofire'
+  pod 'Kingfisher'
   # Pods for GoodBoye
 end

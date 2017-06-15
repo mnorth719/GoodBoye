@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view hidden="YES" contentMode="scaleToFill" id="JtN-M7-Kbl" userLabel="Activity Indicator" customClass="GBActivityIndicator" customModule="GoodBoye" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPe-8W-Eek">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EKN-v3-S7S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+                <view alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjb-3O-Iww" userLabel="maskView">
+                    <rect key="frame" x="132.5" y="278.5" width="110" height="110"/>
+                    <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="1Aa-KS-gaK"/>
+                        <constraint firstAttribute="width" constant="110" id="sLQ-7R-uKs"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boneEmoji" translatesAutoresizingMaskIntoConstraints="NO" id="ca3-ty-Eca">
+                    <rect key="frame" x="162" y="308.5" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="o2F-gf-BiX"/>
+                        <constraint firstAttribute="height" constant="50" id="wPP-VL-iPE"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="mjb-3O-Iww" firstAttribute="centerY" secondItem="JtN-M7-Kbl" secondAttribute="centerY" id="BUw-kb-gqo"/>
+                <constraint firstItem="ca3-ty-Eca" firstAttribute="centerY" secondItem="JtN-M7-Kbl" secondAttribute="centerY" id="JUN-GF-GLa"/>
+                <constraint firstItem="aPe-8W-Eek" firstAttribute="leading" secondItem="JtN-M7-Kbl" secondAttribute="leading" id="NQL-NH-qsx"/>
+                <constraint firstItem="ca3-ty-Eca" firstAttribute="centerX" secondItem="JtN-M7-Kbl" secondAttribute="centerX" id="P2R-gE-1FO"/>
+                <constraint firstAttribute="trailing" secondItem="aPe-8W-Eek" secondAttribute="trailing" id="PeS-oY-HfD"/>
+                <constraint firstItem="aPe-8W-Eek" firstAttribute="top" secondItem="JtN-M7-Kbl" secondAttribute="top" id="SzM-0b-7dd"/>
+                <constraint firstItem="mjb-3O-Iww" firstAttribute="centerX" secondItem="JtN-M7-Kbl" secondAttribute="centerX" id="YkZ-7p-x0f"/>
+                <constraint firstAttribute="bottom" secondItem="aPe-8W-Eek" secondAttribute="bottom" id="hBb-zV-kOh"/>
+            </constraints>
+            <connections>
+                <outlet property="boneEmojiImageView" destination="ca3-ty-Eca" id="VQt-Jh-hfN"/>
+            </connections>
+            <point key="canvasLocation" x="504.5" y="-352.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="boneEmoji" width="128" height="128"/>
+    </resources>
+</document>

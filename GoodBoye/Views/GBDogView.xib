@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="UBi-fc-zzy" userLabel="Dog View" customClass="GBDogView" customModule="GoodBoye" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="431"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iqs-bo-C3K">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dG7-gM-j6s" userLabel="options view">
+                    <rect key="frame" x="0.0" y="367" width="375" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGq-c9-6il" userLabel="share">
+                            <rect key="frame" x="16" y="8" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="LaP-9r-1dX"/>
+                                <constraint firstAttribute="width" constant="44" id="eBL-YW-9Np"/>
+                            </constraints>
+                            <state key="normal" image="share"/>
+                            <connections>
+                                <action selector="shareButtonPushed:" destination="UBi-fc-zzy" eventType="touchUpInside" id="7gd-WJ-AgG"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBB-Ez-2fo" userLabel="favorite">
+                            <rect key="frame" x="315" y="8" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="7RZ-Fg-4pZ"/>
+                                <constraint firstAttribute="height" constant="44" id="EBs-O6-ZTT"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="favorite"/>
+                            <connections>
+                                <action selector="favoriteButtonPushed:" destination="UBi-fc-zzy" eventType="touchUpInside" id="b3j-2J-faP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="kBB-Ez-2fo" secondAttribute="trailing" constant="16" id="P6e-W9-PKb"/>
+                        <constraint firstItem="pGq-c9-6il" firstAttribute="top" secondItem="dG7-gM-j6s" secondAttribute="top" constant="8" id="Urh-fR-Rxl"/>
+                        <constraint firstAttribute="height" constant="64" id="bvK-bF-eIx"/>
+                        <constraint firstItem="pGq-c9-6il" firstAttribute="leading" secondItem="dG7-gM-j6s" secondAttribute="leading" constant="16" id="cwL-3J-K2l"/>
+                        <constraint firstItem="kBB-Ez-2fo" firstAttribute="top" secondItem="dG7-gM-j6s" secondAttribute="top" constant="8" id="yDr-26-mix"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Iqs-bo-C3K" firstAttribute="leading" secondItem="UBi-fc-zzy" secondAttribute="leading" id="5Cp-l5-Glj"/>
+                <constraint firstItem="Iqs-bo-C3K" firstAttribute="top" secondItem="UBi-fc-zzy" secondAttribute="top" id="5aw-CH-9Fc"/>
+                <constraint firstAttribute="bottom" secondItem="Iqs-bo-C3K" secondAttribute="bottom" constant="64" id="bSU-w4-6mg"/>
+                <constraint firstAttribute="trailing" secondItem="dG7-gM-j6s" secondAttribute="trailing" id="beg-PZ-66q"/>
+                <constraint firstItem="dG7-gM-j6s" firstAttribute="leading" secondItem="UBi-fc-zzy" secondAttribute="leading" id="bgC-Sx-N0P"/>
+                <constraint firstAttribute="trailing" secondItem="Iqs-bo-C3K" secondAttribute="trailing" id="pHc-3k-UEv"/>
+                <constraint firstAttribute="bottom" secondItem="dG7-gM-j6s" secondAttribute="bottom" id="pcw-4N-r2J"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dogImage" destination="Iqs-bo-C3K" id="AnL-xR-YFk"/>
+                <outlet property="favoriteButton" destination="kBB-Ez-2fo" id="5g2-PZ-aAf"/>
+                <outlet property="optionsView" destination="dG7-gM-j6s" id="0Za-aX-rIW"/>
+            </connections>
+            <point key="canvasLocation" x="17.5" y="432.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="favorite" width="695" height="598"/>
+        <image name="share" width="694" height="603"/>
+    </resources>
+</document>
