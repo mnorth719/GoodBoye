@@ -9,7 +9,6 @@
 import UIKit
 
 class DogHeroViewController: UIViewController {
-    
     var dog: GBDog? {
         didSet {
             //check current rendered dog
