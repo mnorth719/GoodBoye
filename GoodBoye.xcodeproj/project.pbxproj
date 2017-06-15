@@ -25,7 +25,6 @@
 		225C7FED1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225C7FEB1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.xib */; };
 		225C7FF11EB073D500EF8C31 /* GBDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FF01EB073D500EF8C31 /* GBDogView.swift */; };
 		225C7FF51EB073FE00EF8C31 /* GBDogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225C7FF41EB073FE00EF8C31 /* GBDogView.xib */; };
-		225C7FF71EB07CAD00EF8C31 /* DogHeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C7FF61EB07CAD00EF8C31 /* DogHeroViewController.swift */; };
 		225C7FF91EB0866900EF8C31 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 225C7FF81EB0866900EF8C31 /* Default-568h@2x.png */; };
 		770D29F31E96D6D0003BD3B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770D29F21E96D6D0003BD3B2 /* AppDelegate.swift */; };
 		770D29F81E96D6D0003BD3B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 770D29F61E96D6D0003BD3B2 /* Main.storyboard */; };
@@ -54,7 +53,6 @@
 		225C7FEB1EB06AB200EF8C31 /* FavoriteDogCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavoriteDogCollectionViewCell.xib; path = Views/FavoriteDogCollectionViewCell.xib; sourceTree = "<group>"; };
 		225C7FF01EB073D500EF8C31 /* GBDogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GBDogView.swift; path = Views/GBDogView.swift; sourceTree = "<group>"; };
 		225C7FF41EB073FE00EF8C31 /* GBDogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GBDogView.xib; path = Views/GBDogView.xib; sourceTree = "<group>"; };
-		225C7FF61EB07CAD00EF8C31 /* DogHeroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogHeroViewController.swift; sourceTree = "<group>"; };
 		225C7FF81EB0866900EF8C31 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		770D29EF1E96D6D0003BD3B2 /* GoodBoye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodBoye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		770D29F21E96D6D0003BD3B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +61,7 @@
 		770D29FC1E96D6D0003BD3B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		770D29FE1E96D6D0003BD3B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		770D2A241E9C0E64003BD3B2 /* breeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = breeds.json; sourceTree = "<group>"; };
+		7792C08E1EF337670045AD00 /* DogHeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DogHeroViewController.swift; path = Controllers/DogHeroViewController.swift; sourceTree = "<group>"; };
 		98BD5A66507B4044BA3AF14E /* Pods-GoodBoye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodBoye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoodBoye/Pods-GoodBoye.debug.xcconfig"; sourceTree = "<group>"; };
 		9E9CF1E2810139DA58F3E53F /* Pods-GoodBoye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodBoye.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoodBoye/Pods-GoodBoye.release.xcconfig"; sourceTree = "<group>"; };
 		B0285C881EAA83B499F5C4D8 /* Pods_GoodBoye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodBoye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,9 +158,9 @@
 		770D2A061E96D806003BD3B2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7792C08E1EF337670045AD00 /* DogHeroViewController.swift */,
 				225C7FD01EB069A700EF8C31 /* DogViewController.swift */,
 				225C7FD11EB069A700EF8C31 /* FavoriteDogsViewController.swift */,
-				225C7FF61EB07CAD00EF8C31 /* DogHeroViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -348,7 +347,6 @@
 				225C7FE91EB06A2300EF8C31 /* SpeechBubbleView.swift in Sources */,
 				225C7FE31EB06A1300EF8C31 /* SearchService.swift in Sources */,
 				225C7FE01EB06A1300EF8C31 /* DogService.swift in Sources */,
-				225C7FF71EB07CAD00EF8C31 /* DogHeroViewController.swift in Sources */,
 				225C7FE11EB06A1300EF8C31 /* FavoriteService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
